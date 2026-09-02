@@ -1,0 +1,14 @@
+import { s, type Schema } from "../core/index.js";
+import { data10Schema, type Data10 } from "./data10.js";
+import { included2Schema, type Included2 } from "./included2.js";
+
+export type TokenInfoRecentlyUpdated = {
+  data: Data10[];
+  included?: Included2[];
+};
+
+export const tokenInfoRecentlyUpdatedSchema: Schema<TokenInfoRecentlyUpdated> =
+  s.object<TokenInfoRecentlyUpdated>({
+    data: s.array(s.lazy(() => data10Schema)),
+    included: s.optional(s.array(s.lazy(() => included2Schema))),
+  });

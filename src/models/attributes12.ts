@@ -1,0 +1,66 @@
+import { s, type Schema } from "../core/index.js";
+import { priceChangePercentageSchema, type PriceChangePercentage } from "./price-change-percentage.js";
+import { transactionsSchema, type Transactions } from "./transactions.js";
+import { volumeUsdSchema, type VolumeUsd } from "./volume-usd.js";
+
+export type Attributes12 = {
+  baseTokenPriceUsd: string;
+  baseTokenPriceNativeCurrency: string | null;
+  quoteTokenPriceUsd: string;
+  quoteTokenPriceNativeCurrency: string | null;
+  baseTokenPriceQuoteToken: string | null;
+  quoteTokenPriceBaseToken: string | null;
+  address: string;
+  name: string;
+  poolCreatedAt: string;
+  fdvUsd: string | null;
+  marketCapUsd: string | null;
+  priceChangePercentage: PriceChangePercentage;
+  transactions: Transactions;
+  volumeUsd: VolumeUsd;
+  reserveInUsd: string | null;
+  tokenPriceUsd?: string;
+  sentimentVotePositivePercentage?: number;
+  sentimentVoteNegativePercentage?: number;
+  communitySusReport?: number;
+};
+
+export const attributes12Schema: Schema<Attributes12> = s.object<Attributes12>({
+  baseTokenPriceUsd: s.string(),
+  baseTokenPriceNativeCurrency: s.nullable(s.string()),
+  quoteTokenPriceUsd: s.string(),
+  quoteTokenPriceNativeCurrency: s.nullable(s.string()),
+  baseTokenPriceQuoteToken: s.nullable(s.string()),
+  quoteTokenPriceBaseToken: s.nullable(s.string()),
+  address: s.string(),
+  name: s.string(),
+  poolCreatedAt: s.string(),
+  fdvUsd: s.nullable(s.string()),
+  marketCapUsd: s.nullable(s.string()),
+  priceChangePercentage: priceChangePercentageSchema,
+  transactions: transactionsSchema,
+  volumeUsd: volumeUsdSchema,
+  reserveInUsd: s.nullable(s.string()),
+  tokenPriceUsd: s.optional(s.string()),
+  sentimentVotePositivePercentage: s.optional(s.number()),
+  sentimentVoteNegativePercentage: s.optional(s.number()),
+  communitySusReport: s.optional(s.number()),
+  _keysMap: {
+    baseTokenPriceUsd: "base_token_price_usd",
+    baseTokenPriceNativeCurrency: "base_token_price_native_currency",
+    quoteTokenPriceUsd: "quote_token_price_usd",
+    quoteTokenPriceNativeCurrency: "quote_token_price_native_currency",
+    baseTokenPriceQuoteToken: "base_token_price_quote_token",
+    quoteTokenPriceBaseToken: "quote_token_price_base_token",
+    poolCreatedAt: "pool_created_at",
+    fdvUsd: "fdv_usd",
+    marketCapUsd: "market_cap_usd",
+    priceChangePercentage: "price_change_percentage",
+    volumeUsd: "volume_usd",
+    reserveInUsd: "reserve_in_usd",
+    tokenPriceUsd: "token_price_usd",
+    sentimentVotePositivePercentage: "sentiment_vote_positive_percentage",
+    sentimentVoteNegativePercentage: "sentiment_vote_negative_percentage",
+    communitySusReport: "community_sus_report",
+  },
+});

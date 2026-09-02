@@ -1,0 +1,14 @@
+import { s, type Schema } from "../core/index.js";
+import { attributes18Schema, type Attributes18 } from "./attributes18.js";
+
+export type Data33 = {
+  id: string;
+  type: string;
+  attributes: Attributes18;
+};
+
+export const data33Schema: Schema<Data33> = s.object<Data33>({
+  id: s.string(),
+  type: s.string(),
+  attributes: attributes18Schema,
+});
