@@ -1,4 +1,5 @@
-import { s, type EnumSchema } from "../core/index.js";
+import * as s from "../core/validation/index.js";
+import type { EnumSchema } from "../core/validation/schema.js";
 
 export const Status = {
   Active: "active",

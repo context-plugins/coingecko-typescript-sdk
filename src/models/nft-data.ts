@@ -1,4 +1,5 @@
-import { s, type Schema } from "../core/index.js";
+import * as s from "../core/validation/index.js";
+import type { Schema } from "../core/validation/schema.js";
 import { athChangePercentageSchema, type AthChangePercentage } from "./ath-change-percentage.js";
 import { athDateSchema, type AthDate } from "./ath-date.js";
 import { athSchema, type Ath } from "./ath.js";

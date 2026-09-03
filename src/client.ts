@@ -1,6 +1,6 @@
 import { buildAuthSchemes, type AuthSchemes } from "./auth-schemes.js";
 import { DEFAULT_CLIENT_OPTIONS, type ClientOptions } from "./client-options.js";
-import { RawClient } from "./core/index.js";
+import { RawClient } from "./core/raw-client.js";
 import { Coins } from "./resources/coins.js";
 import { Derivatives } from "./resources/derivatives.js";
 import { Entities } from "./resources/entities.js";

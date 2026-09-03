@@ -1,4 +1,5 @@
-import { s, type Schema } from "../core/index.js";
+import * as s from "../core/validation/index.js";
+import type { Schema } from "../core/validation/schema.js";
 import { buyVolumeUsdSchema, type BuyVolumeUsd } from "./buy-volume-usd.js";
 import { netBuyVolumeUsdSchema, type NetBuyVolumeUsd } from "./net-buy-volume-usd.js";
 import { priceChangePercentageSchema, type PriceChangePercentage } from "./price-change-percentage.js";

@@ -1,6 +1,10 @@
 import type { AuthSchemes } from "../auth-schemes.js";
-import type { ApiPromise, RawClient, RequestOptions } from "../core/index.js";
-import { ResponseError, anyAuth, s } from "../core/index.js";
+import type { ApiPromise } from "../core/api-promise.js";
+import type { RequestOptions } from "../core/api-request.js";
+import { anyAuth } from "../core/auth/schemes.js";
+import type { RawClient } from "../core/raw-client.js";
+import { ResponseError } from "../core/response-error.js";
+import * as s from "../core/validation/index.js";
 import { categoriesListSchema, type CategoriesList } from "../models/categories-list.js";
 import { category1Schema, type Category1 } from "../models/category1.js";
 import { coinsContractAddressSchema, type CoinsContractAddress } from "../models/coins-contract-address.js";

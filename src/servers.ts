@@ -1,5 +1,5 @@
-import type { UrlTemplate } from "./core/index.js";
-import { SdkError } from "./core/index.js";
+import type { UrlTemplate } from "./core/api-request.js";
+import { SdkError } from "./core/errors.js";
 
 export const ServerEnvironment = {
   Production: "production",

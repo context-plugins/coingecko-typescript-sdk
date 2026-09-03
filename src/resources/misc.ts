@@ -1,6 +1,10 @@
 import type { AuthSchemes } from "../auth-schemes.js";
-import type { ApiPromise, RawClient, RequestOptions } from "../core/index.js";
-import { ResponseError, anyAuth, s } from "../core/index.js";
+import type { ApiPromise } from "../core/api-promise.js";
+import type { RequestOptions } from "../core/api-request.js";
+import { anyAuth } from "../core/auth/schemes.js";
+import type { RawClient } from "../core/raw-client.js";
+import { ResponseError } from "../core/response-error.js";
+import * as s from "../core/validation/index.js";
 import { assetPlatformSchema, type AssetPlatform } from "../models/asset-platform.js";
 import { filterSchema, type Filter } from "../models/filter.js";
 import { pingServerSchema, type PingServer } from "../models/ping-server.js";

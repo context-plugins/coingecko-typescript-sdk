@@ -1,4 +1,5 @@
-import { s, type Schema } from "../core/index.js";
+import * as s from "../core/validation/index.js";
+import type { Schema } from "../core/validation/schema.js";
 import { gtScoreDetailsSchema, type GtScoreDetails } from "./gt-score-details.js";
 import { holdersSchema, type Holders } from "./holders.js";
 import { image6Schema, type Image6 } from "./image6.js";

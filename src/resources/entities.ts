@@ -1,6 +1,10 @@
 import type { AuthSchemes } from "../auth-schemes.js";
-import type { ApiPromise, RawClient, RequestOptions } from "../core/index.js";
-import { ResponseError, anyAuth, s } from "../core/index.js";
+import type { ApiPromise } from "../core/api-promise.js";
+import type { RequestOptions } from "../core/api-request.js";
+import { anyAuth } from "../core/auth/schemes.js";
+import type { RawClient } from "../core/raw-client.js";
+import { ResponseError } from "../core/response-error.js";
+import * as s from "../core/validation/index.js";
 import { entitiesListSchema, type EntitiesList } from "../models/entities-list.js";
 import { entityTypeSchema, type EntityType } from "../models/entity-type.js";
 import { Entity, entitySchema } from "../models/entity.js";

@@ -1,6 +1,9 @@
 import type { AuthSchemes } from "../auth-schemes.js";
-import type { ApiPromise, RawClient, RequestOptions } from "../core/index.js";
-import { ResponseError, anyAuth } from "../core/index.js";
+import type { ApiPromise } from "../core/api-promise.js";
+import type { RequestOptions } from "../core/api-request.js";
+import { anyAuth } from "../core/auth/schemes.js";
+import type { RawClient } from "../core/raw-client.js";
+import { ResponseError } from "../core/response-error.js";
 import { globalDeFiSchema, type GlobalDeFi } from "../models/global-de-fi.js";
 import { globalSchema, type Global } from "../models/global.js";
 import type { Servers } from "../servers.js";

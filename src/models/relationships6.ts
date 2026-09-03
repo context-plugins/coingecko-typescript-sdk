@@ -1,4 +1,5 @@
-import { s, type Schema } from "../core/index.js";
+import * as s from "../core/validation/index.js";
+import type { Schema } from "../core/validation/schema.js";
 import { baseTokenSchema, type BaseToken } from "./base-token.js";
 import { dexSchema, type Dex } from "./dex.js";
 import { networkSchema, type Network } from "./network.js";
