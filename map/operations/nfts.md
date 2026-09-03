@@ -4,7 +4,7 @@
 
 Accessor: `client.nfts` · Source: `src/resources/nfts.ts` · 3 operations · Request types: namespace `Nfts`
 
-**Type sources**: every type an operation names, with the file that declares it and the schema value exported beside it. Import every name from `coin-gecko`; the `Source` path is where to **read** the shape, never what to import. `ResponseError` and the runtime error family are excluded — see sdk-map.md.
+**Type sources**: every type an operation names, with the file that declares it and the schema value exported beside it. Import every name from `coin-gecko-demo-api`; the `Source` path is where to **read** the shape, never what to import. `ResponseError` and the runtime error family are excluded — see sdk-map.md.
 
 ### nftsContractAddress
 

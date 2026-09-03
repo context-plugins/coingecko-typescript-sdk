@@ -1,8 +1,8 @@
-# CoinGecko
+# CoinGecko Demo API
 
 [![Built with APIMatic][apimatic-badge]][apimatic-url] [![License: MIT][license-badge]][license-url]
 
-The CoinGecko SDK for TypeScript provides typed access to the CoinGecko REST APIs from Node.js and the browser.
+The CoinGecko Demo API SDK for TypeScript provides typed access to the CoinGecko Demo API REST APIs from Node.js and the browser.
 
 > [!TIP]
 > **Looking for a specific signature, request field, model, enum or error type?** This SDK ships a generated, machine-readable **[SDK map](sdk-map.md)** — a lookup index of the whole TypeScript surface. Consult it **before** grepping or scanning the source tree; it answers most contract questions directly and, where a source file is genuinely needed, names the exact one to open. Details under [SDK map](#sdk-map).
@@ -26,9 +26,9 @@ npm install <path-to-sdk>
 Create one client and reuse it. Configure its behaviour through [ClientOptions](src/client-options.ts).
 
 ```ts
-import { CoinGeckoClient, ServerEnvironment } from "coin-gecko";
+import { CoinGeckoDemoApiClient, ServerEnvironment } from "coin-gecko-demo-api";
 
-const client = new CoinGeckoClient({
+const client = new CoinGeckoDemoApiClient({
   serverEnvironment: ServerEnvironment.Production,
   headerAuth: "YOUR_API_KEY",
   queryAuth: "YOUR_API_KEY",
@@ -42,9 +42,9 @@ Every option has a default — see `DEFAULT_CLIENT_OPTIONS` in the same module. 
 The package ships both dialects from a single entry, so `require` works with full types. In a TypeScript CommonJS file use the `import ... = require(...)` form — a plain destructuring `require` runs fine but gives you `any`.
 
 ```ts
-import sdk = require("coin-gecko");
+import sdk = require("coin-gecko-demo-api");
 
-const client = new sdk.CoinGeckoClient({
+const client = new sdk.CoinGeckoDemoApiClient({
   serverEnvironment: sdk.ServerEnvironment.Production,
   headerAuth: "YOUR_API_KEY",
   queryAuth: "YOUR_API_KEY",

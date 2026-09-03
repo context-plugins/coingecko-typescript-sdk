@@ -1,6 +1,6 @@
 # Reference
 
-> Source: [CoinGeckoClient](src/client.ts)
+> Source: [CoinGeckoDemoApiClient](src/client.ts)
 
 ## Coins
 

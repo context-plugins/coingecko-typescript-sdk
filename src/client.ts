@@ -14,7 +14,7 @@ import { SearchApi } from "./resources/search-api.js";
 import { Simple } from "./resources/simple.js";
 import { buildServers, type Servers } from "./servers.js";
 
-export class CoinGeckoClient {
+export class CoinGeckoDemoApiClient {
   readonly #rawClient: RawClient;
   readonly #servers: Servers;
   readonly #auth: AuthSchemes;

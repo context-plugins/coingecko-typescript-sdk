@@ -1,4 +1,4 @@
-export { CoinGeckoClient } from "./client.js";
+export { CoinGeckoDemoApiClient } from "./client.js";
 export { DEFAULT_CLIENT_OPTIONS, type ClientOptions } from "./client-options.js";
 
 export type { TokenProvider } from "./core/auth/credentials.js";
@@ -297,7 +297,7 @@ export { Status, statusSchema } from "./models/status.js";
 export { Timeframe, timeframeSchema } from "./models/timeframe.js";
 
 export {
-  CoreError as CoinGeckoError,
+  CoreError as CoinGeckoDemoApiError,
   ConnectionError,
   TimeoutError,
   AbortError,

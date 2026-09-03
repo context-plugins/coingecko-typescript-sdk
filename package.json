@@ -1,5 +1,5 @@
 {
-  "name": "coin-gecko",
+  "name": "coin-gecko-demo-api",
   "version": "3.0.0",
   "type": "module",
   "exports": {
@@ -47,7 +47,7 @@
   "scripts": {
     "prepare": "tshy",
     "build": "tshy",
-    "smoke": "node -e \"require('coin-gecko')\" && node --input-type=module -e \"import('coin-gecko')\"",
+    "smoke": "node -e \"require('coin-gecko-demo-api')\" && node --input-type=module -e \"import('coin-gecko-demo-api')\"",
     "typecheck": "tsc --noEmit",
     "typecheck:dom": "tsc --noEmit -p tsconfig.dom.json",
     "lint": "oxlint --type-aware --max-warnings=0 src",
