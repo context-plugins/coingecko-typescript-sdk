@@ -5,6 +5,7 @@ import { poolAddressItemSchema, type PoolAddressItem } from "./pool-address-item
 
 export type PoolAddressData = {
   data: PoolAddressItem;
+  /** Included related resources, present when include parameter is specified */
   included?: Included[];
 };
 

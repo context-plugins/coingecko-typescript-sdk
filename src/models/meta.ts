@@ -4,7 +4,9 @@ import { baseSchema, type Base } from "./base.js";
 import { quoteSchema, type Quote } from "./quote.js";
 
 export type Meta = {
+  /** Base token metadata */
   base?: Base;
+  /** Quote token metadata */
   quote?: Quote;
 };
 

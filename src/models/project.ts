@@ -2,10 +2,15 @@ import * as s from "../core/validation/index.js";
 import type { Schema } from "../core/validation/schema.js";
 import { image4Schema, type Image4 } from "./image4.js";
 
+/** Project information */
 export type Project = {
+  /** Project type */
   type?: string;
+  /** Project ID */
   id?: string;
+  /** Project name */
   name?: string;
+  /** Project image URLs */
   image?: Image4;
 };
 

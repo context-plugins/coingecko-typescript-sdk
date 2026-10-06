@@ -5,6 +5,7 @@ import { tokenItemSchema, type TokenItem } from "./token-item.js";
 
 export type MultiTokenData = {
   data: TokenItem[];
+  /** Included top pool data, present when include=top_pools is specified */
   included?: Included4[];
 };
 

@@ -1,6 +1,7 @@
 import * as s from "../core/validation/index.js";
 import type { Schema } from "../core/validation/schema.js";
 
+/** Converted trading volume */
 export type ConvertedVolume = {
   btc?: number;
   eth?: number;
@@ -8,7 +9,7 @@ export type ConvertedVolume = {
 };
 
 export const convertedVolumeSchema: Schema<ConvertedVolume> = s.object<ConvertedVolume>({
-  btc: s.optional(s.number()),
-  eth: s.optional(s.number()),
-  usd: s.optional(s.number()),
+  btc: s.optional(s.float64()),
+  eth: s.optional(s.float64()),
+  usd: s.optional(s.float64()),
 });

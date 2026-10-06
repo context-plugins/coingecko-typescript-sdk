@@ -2,10 +2,15 @@ import * as s from "../core/validation/index.js";
 import type { Schema } from "../core/validation/schema.js";
 
 export type StatusUpdate = {
+  /** Status update description */
   description?: string;
+  /** Status update category */
   category?: string;
+  /** Status update creation time */
   createdAt?: string;
+  /** Status update user */
   user?: string;
+  /** Status update user title */
   userTitle?: string;
 };
 

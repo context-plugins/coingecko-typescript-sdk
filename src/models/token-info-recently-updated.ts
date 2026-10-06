@@ -5,6 +5,7 @@ import { included2Schema, type Included2 } from "./included2.js";
 
 export type TokenInfoRecentlyUpdated = {
   data: Data10[];
+  /** Included network data, present when include=network is specified */
   included?: Included2[];
 };
 

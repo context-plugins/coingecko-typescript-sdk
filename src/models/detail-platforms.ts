@@ -2,13 +2,16 @@ import * as s from "../core/validation/index.js";
 import type { Schema } from "../core/validation/schema.js";
 
 export type DetailPlatforms = {
+  /** Token decimal place */
   decimalPlace?: number | null;
+  /** Token contract address */
   contractAddress?: string;
+  /** GeckoTerminal URL */
   geckoterminalUrl?: string;
 };
 
 export const detailPlatformsSchema: Schema<DetailPlatforms> = s.object<DetailPlatforms>({
-  decimalPlace: s.optionalNullable(s.number()),
+  decimalPlace: s.optionalNullable(s.int()),
   contractAddress: s.optional(s.string()),
   geckoterminalUrl: s.optional(s.string()),
   _keysMap: {

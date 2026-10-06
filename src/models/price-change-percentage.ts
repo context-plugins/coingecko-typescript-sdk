@@ -1,6 +1,7 @@
 import * as s from "../core/validation/index.js";
 import type { Schema } from "../core/validation/schema.js";
 
+/** Price change percentage over various timeframes */
 export type PriceChangePercentage = {
   m5?: string;
   m15?: string;

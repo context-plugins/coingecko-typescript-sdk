@@ -1,6 +1,7 @@
 import * as s from "../core/validation/index.js";
 import type { Schema } from "../core/validation/schema.js";
 
+/** NFT collection image URLs */
 export type Image5 = {
   small?: string;
   small2X?: string;

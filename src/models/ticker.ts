@@ -5,26 +5,47 @@ import { convertedVolumeSchema, type ConvertedVolume } from "./converted-volume.
 import { marketSchema, type Market } from "./market.js";
 
 export type Ticker = {
+  /** Ticker base currency */
   base: string;
+  /** Ticker target currency */
   target: string;
+  /** Exchange information */
   market: Market;
+  /** Last price */
   last: number;
+  /** Trading volume */
   volume: number;
+  /** Cost to move price up by 2% in USD */
   costToMoveUpUsd?: number;
+  /** Cost to move price down by 2% in USD */
   costToMoveDownUsd?: number;
+  /** Converted last price */
   convertedLast: ConvertedLast;
+  /** Converted trading volume */
   convertedVolume: ConvertedVolume;
+  /** Trust score */
   trustScore: string | null;
+  /** Bid-ask spread percentage */
   bidAskSpreadPercentage: number;
+  /** Ticker timestamp */
   timestamp: string;
+  /** Last traded timestamp */
   lastTradedAt: string;
+  /** Last fetch timestamp */
   lastFetchAt: string;
+  /** Whether ticker is anomalous */
   isAnomaly: boolean;
+  /** Whether ticker is stale */
   isStale: boolean;
+  /** Trade URL */
   tradeUrl: string;
+  /** Token info URL */
   tokenInfoUrl: string | null;
+  /** Base currency coin ID */
   coinId: string;
+  /** Target currency coin ID */
   targetCoinId: string;
+  /** Coin market cap in USD */
   coinMcapUsd: number;
 };
 
@@ -32,14 +53,14 @@ export const tickerSchema: Schema<Ticker> = s.object<Ticker>({
   base: s.string(),
   target: s.string(),
   market: marketSchema,
-  last: s.number(),
-  volume: s.number(),
-  costToMoveUpUsd: s.optional(s.number()),
-  costToMoveDownUsd: s.optional(s.number()),
+  last: s.float64(),
+  volume: s.float64(),
+  costToMoveUpUsd: s.optional(s.float64()),
+  costToMoveDownUsd: s.optional(s.float64()),
   convertedLast: convertedLastSchema,
   convertedVolume: convertedVolumeSchema,
   trustScore: s.nullable(s.string()),
-  bidAskSpreadPercentage: s.number(),
+  bidAskSpreadPercentage: s.float64(),
   timestamp: s.string(),
   lastTradedAt: s.string(),
   lastFetchAt: s.string(),
@@ -49,7 +70,7 @@ export const tickerSchema: Schema<Ticker> = s.object<Ticker>({
   tokenInfoUrl: s.nullable(s.string()),
   coinId: s.string(),
   targetCoinId: s.string(),
-  coinMcapUsd: s.number(),
+  coinMcapUsd: s.float64(),
   _keysMap: {
     costToMoveUpUsd: "cost_to_move_up_usd",
     costToMoveDownUsd: "cost_to_move_down_usd",

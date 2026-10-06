@@ -3,7 +3,9 @@ import type { Schema } from "../core/validation/schema.js";
 import { attributes3Schema, type Attributes3 } from "./attributes3.js";
 
 export type Data8 = {
+  /** Trade identifier */
   id: string;
+  /** Resource type */
   type: string;
   attributes: Attributes3;
 };

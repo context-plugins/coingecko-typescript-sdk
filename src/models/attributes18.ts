@@ -2,7 +2,9 @@ import * as s from "../core/validation/index.js";
 import type { Schema } from "../core/validation/schema.js";
 
 export type Attributes18 = {
+  /** Network name */
   name: string;
+  /** Corresponding CoinGecko asset platform ID */
   coingeckoAssetPlatformId: string;
 };
 

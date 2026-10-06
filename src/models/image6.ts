@@ -1,6 +1,7 @@
 import * as s from "../core/validation/index.js";
 import type { Schema } from "../core/validation/schema.js";
 
+/** Token image URLs in different sizes */
 export type Image6 = {
   thumb?: string;
   small?: string;

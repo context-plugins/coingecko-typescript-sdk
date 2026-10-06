@@ -4,6 +4,7 @@ import { baseTokenSchema, type BaseToken } from "./base-token.js";
 import { dexSchema, type Dex } from "./dex.js";
 import { quoteTokenSchema, type QuoteToken } from "./quote-token.js";
 
+/** Related resources */
 export type Relationships = {
   baseToken?: BaseToken;
   quoteToken?: QuoteToken;

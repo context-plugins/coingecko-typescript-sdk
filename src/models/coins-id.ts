@@ -12,38 +12,71 @@ import { statusUpdateSchema, type StatusUpdate } from "./status-update.js";
 import { ticker1Schema, type Ticker1 } from "./ticker1.js";
 
 export type CoinsId = {
+  /** Coin ID */
   id: string;
+  /** Coin symbol */
   symbol: string;
+  /** Coin name */
   name: string;
+  /** Coin web slug */
   webSlug: string;
+  /** Coin asset platform ID */
   assetPlatformId: string | null;
+  /** Coin asset platform and contract address */
   platforms: Record<string, string>;
+  /** Detailed coin asset platform and contract address */
   detailPlatforms: Record<string, DetailPlatforms1>;
+  /** Blockchain block time in minutes */
   blockTimeInMinutes: number;
+  /** Blockchain hashing algorithm */
   hashingAlgorithm: string | null;
+  /** Coin categories */
   categories: string[];
+  /** Detailed coin categories */
   categoriesDetails?: CategoriesDetail[];
+  /** Preview listing coin */
   previewListing: boolean;
+  /** Public notice */
   publicNotice: string | null;
+  /** Additional notices */
   additionalNotices: string[];
+  /** Whether detailed supply breakdown data is available via /coins/supply_breakdown */
   hasSupplyBreakdown: boolean;
+  /** Coin name localization */
   localization?: Record<string, string>;
+  /** Coin description */
   description: Record<string, string>;
+  /** Links */
   links: Links;
+  /** Coin image URL */
   image: Image1;
+  /** Country of origin */
   countryOrigin: string;
+  /** Genesis date */
   genesisDate: string | null;
+  /** Sentiment votes up percentage */
   sentimentVotesUpPercentage: number | null;
+  /** Sentiment votes down percentage */
   sentimentVotesDownPercentage: number | null;
+  /** ICO data */
   icoData?: IcoData | null;
+  /** Number of users watching this coin in portfolio */
   watchlistPortfolioUsers: number;
+  /** Market cap rank */
   marketCapRank: number | null;
+  /** Market cap rank including rehypothecated tokens */
   marketCapRankWithRehypothecated: number | null;
+  /** Market data */
   marketData?: MarketData1;
+  /** Community data */
   communityData?: CommunityData1;
+  /** Developer data */
   developerData?: DeveloperData1;
+  /** Status updates */
   statusUpdates: StatusUpdate[];
+  /** Last updated timestamp */
   lastUpdated: string;
+  /** Tickers */
   tickers?: Ticker1[];
 };
 
@@ -58,7 +91,7 @@ export const coinsIdSchema: Schema<CoinsId> = s.object<CoinsId>({
     s.string(),
     s.lazy(() => detailPlatforms1Schema),
   ),
-  blockTimeInMinutes: s.number(),
+  blockTimeInMinutes: s.float64(),
   hashingAlgorithm: s.nullable(s.string()),
   categories: s.array(s.string()),
   categoriesDetails: s.optional(s.array(s.lazy(() => categoriesDetailSchema))),
@@ -72,12 +105,12 @@ export const coinsIdSchema: Schema<CoinsId> = s.object<CoinsId>({
   image: image1Schema,
   countryOrigin: s.string(),
   genesisDate: s.nullable(s.string()),
-  sentimentVotesUpPercentage: s.nullable(s.number()),
-  sentimentVotesDownPercentage: s.nullable(s.number()),
+  sentimentVotesUpPercentage: s.nullable(s.float64()),
+  sentimentVotesDownPercentage: s.nullable(s.float64()),
   icoData: s.optionalNullable(s.lazy(() => icoDataSchema)),
-  watchlistPortfolioUsers: s.number(),
-  marketCapRank: s.nullable(s.number()),
-  marketCapRankWithRehypothecated: s.nullable(s.number()),
+  watchlistPortfolioUsers: s.float64(),
+  marketCapRank: s.nullable(s.int()),
+  marketCapRankWithRehypothecated: s.nullable(s.int()),
   marketData: s.optional(s.lazy(() => marketData1Schema)),
   communityData: s.optional(s.lazy(() => communityData1Schema)),
   developerData: s.optional(s.lazy(() => developerData1Schema)),

@@ -1,36 +1,67 @@
 import * as s from "../core/validation/index.js";
 import type { Schema } from "../core/validation/schema.js";
 
+/** ICO data */
 export type IcoData = {
+  /** ICO start date */
   icoStartDate?: string;
+  /** ICO end date */
   icoEndDate?: string;
+  /** Short description */
   shortDesc?: string;
+  /** Detailed description */
   description?: string;
+  /** ICO related links */
   links?: Record<string, string>;
+  /** Softcap currency */
   softcapCurrency?: string;
+  /** Hardcap currency */
   hardcapCurrency?: string;
+  /** Total raised currency */
   totalRaisedCurrency?: string;
+  /** Softcap amount */
   softcapAmount?: number;
+  /** Hardcap amount */
   hardcapAmount?: number;
+  /** Total raised amount */
   totalRaised?: number;
+  /** Quote pre-sale currency */
   quotePreSaleCurrency?: string;
+  /** Base pre-sale amount */
   basePreSaleAmount?: number;
+  /** Quote pre-sale amount */
   quotePreSaleAmount?: number;
+  /** Quote public sale currency */
   quotePublicSaleCurrency?: string;
+  /** Base public sale amount */
   basePublicSaleAmount?: number;
+  /** Quote public sale amount */
   quotePublicSaleAmount?: number;
+  /** Accepting currencies */
   acceptingCurrencies?: string;
+  /** Country of origin */
   countryOrigin?: string;
+  /** Pre-sale start date */
   preSaleStartDate?: string;
+  /** Pre-sale end date */
   preSaleEndDate?: string;
+  /** Whitelist URL */
   whitelistUrl?: string;
+  /** Whitelist start date */
   whitelistStartDate?: string;
+  /** Whitelist end date */
   whitelistEndDate?: string;
+  /** Bounty detail URL */
   bountyDetailUrl?: string;
+  /** Amount for sale */
   amountForSale?: number;
+  /** KYC required */
   kycRequired?: boolean;
+  /** Whitelist available */
   whitelistAvailable?: boolean;
+  /** Pre-sale available */
   preSaleAvailable?: boolean;
+  /** Pre-sale ended */
   preSaleEnded?: boolean;
 };
 
@@ -43,15 +74,15 @@ export const icoDataSchema: Schema<IcoData> = s.object<IcoData>({
   softcapCurrency: s.optional(s.string()),
   hardcapCurrency: s.optional(s.string()),
   totalRaisedCurrency: s.optional(s.string()),
-  softcapAmount: s.optional(s.number()),
-  hardcapAmount: s.optional(s.number()),
-  totalRaised: s.optional(s.number()),
+  softcapAmount: s.optional(s.float64()),
+  hardcapAmount: s.optional(s.float64()),
+  totalRaised: s.optional(s.float64()),
   quotePreSaleCurrency: s.optional(s.string()),
-  basePreSaleAmount: s.optional(s.number()),
-  quotePreSaleAmount: s.optional(s.number()),
+  basePreSaleAmount: s.optional(s.float64()),
+  quotePreSaleAmount: s.optional(s.float64()),
   quotePublicSaleCurrency: s.optional(s.string()),
-  basePublicSaleAmount: s.optional(s.number()),
-  quotePublicSaleAmount: s.optional(s.number()),
+  basePublicSaleAmount: s.optional(s.float64()),
+  quotePublicSaleAmount: s.optional(s.float64()),
   acceptingCurrencies: s.optional(s.string()),
   countryOrigin: s.optional(s.string()),
   preSaleStartDate: s.optional(s.string()),
@@ -60,7 +91,7 @@ export const icoDataSchema: Schema<IcoData> = s.object<IcoData>({
   whitelistStartDate: s.optional(s.string()),
   whitelistEndDate: s.optional(s.string()),
   bountyDetailUrl: s.optional(s.string()),
-  amountForSale: s.optional(s.number()),
+  amountForSale: s.optional(s.float64()),
   kycRequired: s.optional(s.boolean()),
   whitelistAvailable: s.optional(s.boolean()),
   preSaleAvailable: s.optional(s.boolean()),

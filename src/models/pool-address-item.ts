@@ -4,9 +4,12 @@ import { attributesSchema, type Attributes } from "./attributes.js";
 import { relationshipsSchema, type Relationships } from "./relationships.js";
 
 export type PoolAddressItem = {
+  /** Pool identifier */
   id: string;
+  /** Resource type */
   type: string;
   attributes: Attributes;
+  /** Related resources */
   relationships: Relationships;
 };
 

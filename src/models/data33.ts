@@ -3,7 +3,9 @@ import type { Schema } from "../core/validation/schema.js";
 import { attributes18Schema, type Attributes18 } from "./attributes18.js";
 
 export type Data33 = {
+  /** Network identifier */
   id: string;
+  /** Resource type */
   type: string;
   attributes: Attributes18;
 };

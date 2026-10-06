@@ -5,6 +5,7 @@ import { included3Schema, type Included3 } from "./included3.js";
 
 export type PoolTokensInfo = {
   data: Data12[];
+  /** Included pool data, present when include=pool is specified */
   included?: Included3[];
 };
 

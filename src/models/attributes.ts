@@ -8,30 +8,55 @@ import { transactionsSchema, type Transactions } from "./transactions.js";
 import { volumeUsdSchema, type VolumeUsd } from "./volume-usd.js";
 
 export type Attributes = {
+  /** Base token price in USD */
   baseTokenPriceUsd: string;
+  /** Base token price in native currency */
   baseTokenPriceNativeCurrency: string;
+  /** Base token balance in pool */
   baseTokenBalance?: string;
+  /** Base token liquidity in USD */
   baseTokenLiquidityUsd?: string;
+  /** Quote token price in USD */
   quoteTokenPriceUsd: string;
+  /** Quote token price in native currency */
   quoteTokenPriceNativeCurrency: string;
+  /** Quote token balance in pool */
   quoteTokenBalance?: string;
+  /** Quote token liquidity in USD */
   quoteTokenLiquidityUsd?: string;
+  /** Base token price in quote token */
   baseTokenPriceQuoteToken: string;
+  /** Quote token price in base token */
   quoteTokenPriceBaseToken: string;
+  /** Pool contract address */
   address: string;
+  /** Pool name with fee tier */
   name: string;
+  /** Pool name without fee tier */
   poolName: string;
+  /** Pool fee percentage */
   poolFeePercentage: string;
+  /** Pool creation timestamp */
   poolCreatedAt: string;
+  /** Fully diluted valuation in USD */
   fdvUsd: string | null;
+  /** Market cap in USD */
   marketCapUsd: string | null;
+  /** Price change percentage over various timeframes */
   priceChangePercentage: PriceChangePercentage;
+  /** Transaction counts over various timeframes */
   transactions: Transactions;
+  /** Volume in USD over various timeframes */
   volumeUsd: VolumeUsd;
+  /** Net buy volume in USD over various timeframes */
   netBuyVolumeUsd?: NetBuyVolumeUsd;
+  /** Buy volume in USD over various timeframes */
   buyVolumeUsd?: BuyVolumeUsd;
+  /** Sell volume in USD over various timeframes */
   sellVolumeUsd?: SellVolumeUsd;
+  /** Total reserve in USD */
   reserveInUsd: string;
+  /** Locked liquidity percentage */
   lockedLiquidityPercentage: string;
 };
 

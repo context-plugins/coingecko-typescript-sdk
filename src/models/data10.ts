@@ -4,7 +4,9 @@ import { attributes5Schema, type Attributes5 } from "./attributes5.js";
 import { relationships1Schema, type Relationships1 } from "./relationships1.js";
 
 export type Data10 = {
+  /** Token identifier */
   id: string;
+  /** Resource type */
   type: string;
   attributes: Attributes5;
   relationships: Relationships1;

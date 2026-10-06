@@ -3,7 +3,9 @@ import type { Schema } from "../core/validation/schema.js";
 import { attributes17Schema, type Attributes17 } from "./attributes17.js";
 
 export type Data32 = {
+  /** DEX identifier */
   id: string;
+  /** Resource type */
   type: string;
   attributes: Attributes17;
 };

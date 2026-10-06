@@ -4,16 +4,16 @@
 
 Accessor: `client.publicTreasuryApi` · Source: `src/resources/public-treasury-api.ts` · 3 operations · Request types: namespace `PublicTreasuryApi`
 
-**Type sources**: every type an operation names, with the file that declares it and the schema value exported beside it. Import every name from `coin-gecko-demo-api`; the `Source` path is where to **read** the shape, never what to import. `ResponseError` and the runtime error family are excluded — see sdk-map.md.
+**Type sources**: every type an operation names, with the file that declares it and the schema value exported beside it. Import every name from `coin-gecko`; the `Source` path is where to **read** the shape, never what to import. `ApiError`, the runtime error family and the file vocabulary are excluded — see sdk-map.md.
 
 ### publicTreasuryEntity
 
-- **Signature**: `publicTreasuryEntity(request: PublicTreasuryApi.PublicTreasuryEntityRequest, options?: RequestOptions): ApiPromise<PublicTreasuryEntity, ResponseError>`
+- **Signature**: `publicTreasuryEntity(request: PublicTreasuryApi.PublicTreasuryEntityRequest, options?: RequestOptions): ApiPromise<PublicTreasuryEntity, ApiError>`
 - **Wire**: `GET /public_treasury/{entity_id}`
 - **Auth**: any of `headerAuth`, `queryAuth` — the first one configured is sent
 - **Request body**: none — no `Content-Type` header is sent
 - **Returns**: `PublicTreasuryEntity`
-- **Error**: `ResponseError` — untyped, `payload.kind` always `"undeclared"`
+- **Error**: `CoinGeckoError` with `kind: "api"` — untyped, `payload.kind` always `"undeclared"`
 
 **Fields** — `PublicTreasuryApi.PublicTreasuryEntityRequest` (3):
 
@@ -29,12 +29,12 @@ Accessor: `client.publicTreasuryApi` · Source: `src/resources/public-treasury-a
 
 ### publicTreasuryEntityChart
 
-- **Signature**: `publicTreasuryEntityChart(request: PublicTreasuryApi.PublicTreasuryEntityChartRequest, options?: RequestOptions): ApiPromise<PublicTreasuryEntityChart, ResponseError>`
+- **Signature**: `publicTreasuryEntityChart(request: PublicTreasuryApi.PublicTreasuryEntityChartRequest, options?: RequestOptions): ApiPromise<PublicTreasuryEntityChart, ApiError>`
 - **Wire**: `GET /public_treasury/{entity_id}/{coin_id}/holding_chart`
 - **Auth**: any of `headerAuth`, `queryAuth` — the first one configured is sent
 - **Request body**: none — no `Content-Type` header is sent
 - **Returns**: `PublicTreasuryEntityChart`
-- **Error**: `ResponseError` — untyped, `payload.kind` always `"undeclared"`
+- **Error**: `CoinGeckoError` with `kind: "api"` — untyped, `payload.kind` always `"undeclared"`
 
 **Fields** — `PublicTreasuryApi.PublicTreasuryEntityChartRequest` (4):
 
@@ -51,12 +51,12 @@ Accessor: `client.publicTreasuryApi` · Source: `src/resources/public-treasury-a
 
 ### publicTreasuryTransactionHistory
 
-- **Signature**: `publicTreasuryTransactionHistory(request: PublicTreasuryApi.PublicTreasuryTransactionHistoryRequest, options?: RequestOptions): ApiPromise<PublicTreasuryTransactionHistory, ResponseError>`
+- **Signature**: `publicTreasuryTransactionHistory(request: PublicTreasuryApi.PublicTreasuryTransactionHistoryRequest, options?: RequestOptions): ApiPromise<PublicTreasuryTransactionHistory, ApiError>`
 - **Wire**: `GET /public_treasury/{entity_id}/transaction_history`
 - **Auth**: any of `headerAuth`, `queryAuth` — the first one configured is sent
 - **Request body**: none — no `Content-Type` header is sent
 - **Returns**: `PublicTreasuryTransactionHistory`
-- **Error**: `ResponseError` — untyped, `payload.kind` always `"undeclared"`
+- **Error**: `CoinGeckoError` with `kind: "api"` — untyped, `payload.kind` always `"undeclared"`
 
 **Fields** — `PublicTreasuryApi.PublicTreasuryTransactionHistoryRequest` (5):
 

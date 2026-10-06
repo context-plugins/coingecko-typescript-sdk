@@ -4,16 +4,16 @@
 
 Accessor: `client.entities` · Source: `src/resources/entities.ts` · 2 operations · Request types: namespace `Entities`
 
-**Type sources**: every type an operation names, with the file that declares it and the schema value exported beside it. Import every name from `coin-gecko-demo-api`; the `Source` path is where to **read** the shape, never what to import. `ResponseError` and the runtime error family are excluded — see sdk-map.md.
+**Type sources**: every type an operation names, with the file that declares it and the schema value exported beside it. Import every name from `coin-gecko`; the `Source` path is where to **read** the shape, never what to import. `ApiError`, the runtime error family and the file vocabulary are excluded — see sdk-map.md.
 
 ### companiesPublicTreasury
 
-- **Signature**: `companiesPublicTreasury(request: Entities.CompaniesPublicTreasuryRequest, options?: RequestOptions): ApiPromise<PublicTreasury, ResponseError>`
+- **Signature**: `companiesPublicTreasury(request: Entities.CompaniesPublicTreasuryRequest, options?: RequestOptions): ApiPromise<PublicTreasury, ApiError>`
 - **Wire**: `GET /{entity}/public_treasury/{coin_id}`
 - **Auth**: any of `headerAuth`, `queryAuth` — the first one configured is sent
 - **Request body**: none — no `Content-Type` header is sent
 - **Returns**: `PublicTreasury`
-- **Error**: `ResponseError` — untyped, `payload.kind` always `"undeclared"`
+- **Error**: `CoinGeckoError` with `kind: "api"` — untyped, `payload.kind` always `"undeclared"`
 
 **Fields** — `Entities.CompaniesPublicTreasuryRequest` (5):
 
@@ -33,12 +33,12 @@ Accessor: `client.entities` · Source: `src/resources/entities.ts` · 2 operatio
 
 ### entitiesList
 
-- **Signature**: `entitiesList(request: Entities.EntitiesListRequest, options?: RequestOptions): ApiPromise<EntitiesList[], ResponseError>`
+- **Signature**: `entitiesList(request: Entities.EntitiesListRequest, options?: RequestOptions): ApiPromise<EntitiesList[], ApiError>`
 - **Wire**: `GET /entities/list`
 - **Auth**: any of `headerAuth`, `queryAuth` — the first one configured is sent
 - **Request body**: none — no `Content-Type` header is sent
 - **Returns**: `EntitiesList[]` — a bare `application/json` array; the success type *is* the array, not a wrapper model
-- **Error**: `ResponseError` — untyped, `payload.kind` always `"undeclared"`
+- **Error**: `CoinGeckoError` with `kind: "api"` — untyped, `payload.kind` always `"undeclared"`
 
 **Fields** — `Entities.EntitiesListRequest` (3):
 

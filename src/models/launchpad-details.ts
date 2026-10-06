@@ -1,6 +1,7 @@
 import * as s from "../core/validation/index.js";
 import type { Schema } from "../core/validation/schema.js";
 
+/** Launchpad details for pump-style tokens */
 export type LaunchpadDetails = {
   graduationPercentage?: number;
   completed?: boolean;
@@ -9,7 +10,7 @@ export type LaunchpadDetails = {
 };
 
 export const launchpadDetailsSchema: Schema<LaunchpadDetails> = s.object<LaunchpadDetails>({
-  graduationPercentage: s.optional(s.number()),
+  graduationPercentage: s.optional(s.float64()),
   completed: s.optional(s.boolean()),
   completedAt: s.optionalNullable(s.string()),
   migratedDestinationPoolAddress: s.optionalNullable(s.string()),

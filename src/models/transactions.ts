@@ -3,6 +3,7 @@ import type { Schema } from "../core/validation/schema.js";
 import { h1Schema, type H1 } from "./h1.js";
 import { m5Schema, type M5 } from "./m5.js";
 
+/** Transaction counts over various timeframes */
 export type Transactions = {
   m5?: M5;
   m15?: M5;

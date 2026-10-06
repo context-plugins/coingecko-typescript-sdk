@@ -2,11 +2,17 @@ import * as s from "../core/validation/index.js";
 import type { Schema } from "../core/validation/schema.js";
 
 export type Attributes16 = {
+  /** Token prices keyed by contract address */
   tokenPrices: Record<string, string>;
+  /** Market cap in USD keyed by contract address */
   marketCapUsd?: Record<string, string>;
+  /** 24hr volume in USD keyed by contract address */
   h24VolumeUsd?: Record<string, string>;
+  /** 24hr price change percentage keyed by contract address */
   h24PriceChangePercentage?: Record<string, string>;
+  /** Total reserve in USD keyed by contract address */
   totalReserveInUsd?: Record<string, string>;
+  /** Last trade timestamp keyed by contract address */
   lastTradeTimestamp?: Record<string, string>;
 };
 

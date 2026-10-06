@@ -10,37 +10,69 @@ import { statusUpdateSchema, type StatusUpdate } from "./status-update.js";
 import { ticker1Schema, type Ticker1 } from "./ticker1.js";
 
 export type CoinsContractAddress = {
+  /** Coin ID */
   id: string;
+  /** Coin symbol */
   symbol: string;
+  /** Coin name */
   name: string;
+  /** Coin web slug */
   webSlug: string;
+  /** Coin asset platform ID */
   assetPlatformId: string | null;
+  /** Coin asset platform and contract address */
   platforms: Record<string, string>;
+  /** Detailed coin asset platform and contract address */
   detailPlatforms: Record<string, DetailPlatforms>;
+  /** Blockchain block time in minutes */
   blockTimeInMinutes: number;
+  /** Blockchain hashing algorithm */
   hashingAlgorithm: string | null;
+  /** Coin categories */
   categories: string[];
+  /** Preview listing coin */
   previewListing: boolean;
+  /** Public notice */
   publicNotice: string | null;
+  /** Additional notices */
   additionalNotices: string[];
+  /** Whether detailed supply breakdown data is available via /coins/supply_breakdown */
   hasSupplyBreakdown: boolean;
+  /** Coin name localization */
   localization?: Record<string, string>;
+  /** Coin description */
   description: Record<string, string>;
+  /** Links */
   links: Links;
+  /** Coin image URL */
   image: Image1;
+  /** Country of origin */
   countryOrigin: string;
+  /** Genesis date */
   genesisDate: string | null;
+  /** Coin contract address */
   contractAddress: string;
+  /** Sentiment votes up percentage */
   sentimentVotesUpPercentage: number | null;
+  /** Sentiment votes down percentage */
   sentimentVotesDownPercentage: number | null;
+  /** Number of users watching this coin in portfolio */
   watchlistPortfolioUsers: number;
+  /** Market cap rank */
   marketCapRank: number | null;
+  /** Market cap rank including rehypothecated tokens */
   marketCapRankWithRehypothecated: number | null;
+  /** Market data */
   marketData?: MarketData1;
+  /** Community data */
   communityData?: CommunityData1;
+  /** Developer data */
   developerData?: DeveloperData1;
+  /** Status updates */
   statusUpdates: StatusUpdate[];
+  /** Last updated timestamp */
   lastUpdated: string;
+  /** Tickers */
   tickers?: Ticker1[];
 };
 
@@ -55,7 +87,7 @@ export const coinsContractAddressSchema: Schema<CoinsContractAddress> = s.object
     s.string(),
     s.lazy(() => detailPlatformsSchema),
   ),
-  blockTimeInMinutes: s.number(),
+  blockTimeInMinutes: s.float64(),
   hashingAlgorithm: s.nullable(s.string()),
   categories: s.array(s.string()),
   previewListing: s.boolean(),
@@ -69,11 +101,11 @@ export const coinsContractAddressSchema: Schema<CoinsContractAddress> = s.object
   countryOrigin: s.string(),
   genesisDate: s.nullable(s.string()),
   contractAddress: s.string(),
-  sentimentVotesUpPercentage: s.nullable(s.number()),
-  sentimentVotesDownPercentage: s.nullable(s.number()),
-  watchlistPortfolioUsers: s.number(),
-  marketCapRank: s.nullable(s.number()),
-  marketCapRankWithRehypothecated: s.nullable(s.number()),
+  sentimentVotesUpPercentage: s.nullable(s.float64()),
+  sentimentVotesDownPercentage: s.nullable(s.float64()),
+  watchlistPortfolioUsers: s.float64(),
+  marketCapRank: s.nullable(s.int()),
+  marketCapRankWithRehypothecated: s.nullable(s.int()),
   marketData: s.optional(s.lazy(() => marketData1Schema)),
   communityData: s.optional(s.lazy(() => communityData1Schema)),
   developerData: s.optional(s.lazy(() => developerData1Schema)),

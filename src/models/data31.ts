@@ -3,7 +3,9 @@ import type { Schema } from "../core/validation/schema.js";
 import { attributes16Schema, type Attributes16 } from "./attributes16.js";
 
 export type Data31 = {
+  /** Request ID */
   id: string;
+  /** Response type */
   type: string;
   attributes: Attributes16;
 };

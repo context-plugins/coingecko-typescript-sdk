@@ -2,9 +2,13 @@ import * as s from "../core/validation/index.js";
 import type { Schema } from "../core/validation/schema.js";
 
 export type Nft = {
+  /** NFT collection ID */
   id: string;
+  /** NFT collection name */
   name: string;
+  /** NFT collection symbol */
   symbol: string;
+  /** NFT collection thumb image URL */
   thumb: string;
 };
 

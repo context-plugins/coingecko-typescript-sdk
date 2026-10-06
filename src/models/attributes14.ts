@@ -5,20 +5,35 @@ import { transactionsSchema, type Transactions } from "./transactions.js";
 import { volumeUsdSchema, type VolumeUsd } from "./volume-usd.js";
 
 export type Attributes14 = {
+  /** Base token price in USD */
   baseTokenPriceUsd: string;
+  /** Base token price in native currency */
   baseTokenPriceNativeCurrency: string | null;
+  /** Quote token price in USD */
   quoteTokenPriceUsd: string;
+  /** Quote token price in native currency */
   quoteTokenPriceNativeCurrency: string | null;
+  /** Base token price in quote token */
   baseTokenPriceQuoteToken: string | null;
+  /** Quote token price in base token */
   quoteTokenPriceBaseToken: string | null;
+  /** Pool contract address */
   address: string;
+  /** Pool name */
   name: string;
+  /** Pool creation timestamp */
   poolCreatedAt: string;
+  /** Fully diluted valuation in USD */
   fdvUsd: string | null;
+  /** Market cap in USD */
   marketCapUsd: string | null;
+  /** Price change percentage over various timeframes */
   priceChangePercentage: PriceChangePercentage;
+  /** Transaction counts over various timeframes */
   transactions: Transactions;
+  /** Volume in USD over various timeframes */
   volumeUsd: VolumeUsd;
+  /** Total reserve in USD */
   reserveInUsd: string | null;
 };
 

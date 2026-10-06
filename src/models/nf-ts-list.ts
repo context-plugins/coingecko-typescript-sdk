@@ -2,10 +2,15 @@ import * as s from "../core/validation/index.js";
 import type { Schema } from "../core/validation/schema.js";
 
 export type NfTsList = {
+  /** NFT collection ID */
   id: string;
+  /** NFT collection contract address */
   contractAddress: string;
+  /** NFT collection name */
   name: string;
+  /** NFT collection asset platform ID */
   assetPlatformId: string;
+  /** NFT collection symbol */
   symbol: string;
 };
 

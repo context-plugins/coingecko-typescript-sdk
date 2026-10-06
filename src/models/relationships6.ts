@@ -5,6 +5,7 @@ import { dexSchema, type Dex } from "./dex.js";
 import { networkSchema, type Network } from "./network.js";
 import { quoteTokenSchema, type QuoteToken } from "./quote-token.js";
 
+/** Related resources */
 export type Relationships6 = {
   baseToken?: BaseToken;
   quoteToken?: QuoteToken;

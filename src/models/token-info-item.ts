@@ -3,7 +3,9 @@ import type { Schema } from "../core/validation/schema.js";
 import { attributes7Schema, type Attributes7 } from "./attributes7.js";
 
 export type TokenInfoItem = {
+  /** Token identifier */
   id: string;
+  /** Resource type */
   type: string;
   attributes: Attributes7;
 };

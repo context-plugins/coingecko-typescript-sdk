@@ -4,40 +4,75 @@ import { roi2Schema, type Roi2 } from "./roi2.js";
 import { sparklineIn7DSchema, type SparklineIn7D } from "./sparkline-in7-d.js";
 
 export type CoinsMarket = {
+  /** Coin ID */
   id: string;
+  /** Coin symbol */
   symbol: string;
+  /** Coin name */
   name: string;
+  /** Coin image URL */
   image: string;
+  /** Current price in target currency */
   currentPrice: number | null;
+  /** Market cap in target currency */
   marketCap: number | null;
+  /** Market cap rank */
   marketCapRank: number | null;
+  /** Fully diluted valuation in target currency */
   fullyDilutedValuation: number | null;
+  /** Total trading volume in target currency */
   totalVolume: number | null;
+  /** 24-hour price high in target currency */
   high24H: number | null;
+  /** 24-hour price low in target currency */
   low24H: number | null;
+  /** 24-hour price change in target currency */
   priceChange24H: number | null;
+  /** 24-hour price change percentage */
   priceChangePercentage24H: number | null;
+  /** 24-hour market cap change in target currency */
   marketCapChange24H: number | null;
+  /** 24-hour market cap change percentage */
   marketCapChangePercentage24H: number | null;
+  /** Circulating supply */
   circulatingSupply: number | null;
+  /** Total supply */
   totalSupply: number | null;
+  /** Max supply */
   maxSupply: number | null;
+  /** All-time high price in target currency */
   ath: number | null;
+  /** All-time high change percentage */
   athChangePercentage: number | null;
+  /** All-time high date */
   athDate: Date | null;
+  /** All-time low price in target currency */
   atl: number | null;
+  /** All-time low change percentage */
   atlChangePercentage: number | null;
+  /** All-time low date */
   atlDate: Date | null;
+  /** Return on investment data */
   roi: Roi2 | null;
+  /** Last updated timestamp */
   lastUpdated: Date;
+  /** Market cap rank including rehypothecated tokens */
   marketCapRankWithRehypothecated?: number | null;
+  /** Sparkline price data for the last 7 days */
   sparklineIn7D?: SparklineIn7D;
+  /** 1-hour price change percentage in target currency */
   priceChangePercentage1HInCurrency?: number | null;
+  /** 24-hour price change percentage in target currency */
   priceChangePercentage24HInCurrency?: number | null;
+  /** 7-day price change percentage in target currency */
   priceChangePercentage7DInCurrency?: number | null;
+  /** 14-day price change percentage in target currency */
   priceChangePercentage14DInCurrency?: number | null;
+  /** 30-day price change percentage in target currency */
   priceChangePercentage30DInCurrency?: number | null;
+  /** 200-day price change percentage in target currency */
   priceChangePercentage200DInCurrency?: number | null;
+  /** 1-year price change percentage in target currency */
   priceChangePercentage1YInCurrency?: number | null;
 };
 
@@ -46,37 +81,37 @@ export const coinsMarketSchema: Schema<CoinsMarket> = s.object<CoinsMarket>({
   symbol: s.string(),
   name: s.string(),
   image: s.string(),
-  currentPrice: s.nullable(s.number()),
-  marketCap: s.nullable(s.number()),
-  marketCapRank: s.nullable(s.number()),
-  fullyDilutedValuation: s.nullable(s.number()),
-  totalVolume: s.nullable(s.number()),
-  high24H: s.nullable(s.number()),
-  low24H: s.nullable(s.number()),
-  priceChange24H: s.nullable(s.number()),
-  priceChangePercentage24H: s.nullable(s.number()),
-  marketCapChange24H: s.nullable(s.number()),
-  marketCapChangePercentage24H: s.nullable(s.number()),
-  circulatingSupply: s.nullable(s.number()),
-  totalSupply: s.nullable(s.number()),
-  maxSupply: s.nullable(s.number()),
-  ath: s.nullable(s.number()),
-  athChangePercentage: s.nullable(s.number()),
+  currentPrice: s.nullable(s.float64()),
+  marketCap: s.nullable(s.float64()),
+  marketCapRank: s.nullable(s.int()),
+  fullyDilutedValuation: s.nullable(s.float64()),
+  totalVolume: s.nullable(s.float64()),
+  high24H: s.nullable(s.float64()),
+  low24H: s.nullable(s.float64()),
+  priceChange24H: s.nullable(s.float64()),
+  priceChangePercentage24H: s.nullable(s.float64()),
+  marketCapChange24H: s.nullable(s.float64()),
+  marketCapChangePercentage24H: s.nullable(s.float64()),
+  circulatingSupply: s.nullable(s.float64()),
+  totalSupply: s.nullable(s.float64()),
+  maxSupply: s.nullable(s.float64()),
+  ath: s.nullable(s.float64()),
+  athChangePercentage: s.nullable(s.float64()),
   athDate: s.nullable(s.dateTime()),
-  atl: s.nullable(s.number()),
-  atlChangePercentage: s.nullable(s.number()),
+  atl: s.nullable(s.float64()),
+  atlChangePercentage: s.nullable(s.float64()),
   atlDate: s.nullable(s.dateTime()),
   roi: s.nullable(s.lazy(() => roi2Schema)),
   lastUpdated: s.dateTime(),
-  marketCapRankWithRehypothecated: s.optionalNullable(s.number()),
+  marketCapRankWithRehypothecated: s.optionalNullable(s.int()),
   sparklineIn7D: s.optional(s.lazy(() => sparklineIn7DSchema)),
-  priceChangePercentage1HInCurrency: s.optionalNullable(s.number()),
-  priceChangePercentage24HInCurrency: s.optionalNullable(s.number()),
-  priceChangePercentage7DInCurrency: s.optionalNullable(s.number()),
-  priceChangePercentage14DInCurrency: s.optionalNullable(s.number()),
-  priceChangePercentage30DInCurrency: s.optionalNullable(s.number()),
-  priceChangePercentage200DInCurrency: s.optionalNullable(s.number()),
-  priceChangePercentage1YInCurrency: s.optionalNullable(s.number()),
+  priceChangePercentage1HInCurrency: s.optionalNullable(s.float64()),
+  priceChangePercentage24HInCurrency: s.optionalNullable(s.float64()),
+  priceChangePercentage7DInCurrency: s.optionalNullable(s.float64()),
+  priceChangePercentage14DInCurrency: s.optionalNullable(s.float64()),
+  priceChangePercentage30DInCurrency: s.optionalNullable(s.float64()),
+  priceChangePercentage200DInCurrency: s.optionalNullable(s.float64()),
+  priceChangePercentage1YInCurrency: s.optionalNullable(s.float64()),
   _keysMap: {
     currentPrice: "current_price",
     marketCap: "market_cap",

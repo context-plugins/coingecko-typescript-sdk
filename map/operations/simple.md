@@ -4,16 +4,16 @@
 
 Accessor: `client.simple` · Source: `src/resources/simple.ts` · 3 operations · Request types: namespace `Simple`
 
-**Type sources**: every type an operation names, with the file that declares it and the schema value exported beside it. Import every name from `coin-gecko-demo-api`; the `Source` path is where to **read** the shape, never what to import. `ResponseError` and the runtime error family are excluded — see sdk-map.md.
+**Type sources**: every type an operation names, with the file that declares it and the schema value exported beside it. Import every name from `coin-gecko`; the `Source` path is where to **read** the shape, never what to import. `ApiError`, the runtime error family and the file vocabulary are excluded — see sdk-map.md.
 
 ### simplePrice
 
-- **Signature**: `simplePrice(request: Simple.SimplePriceRequest, options?: RequestOptions): ApiPromise<Record<string, SimplePrice>, ResponseError>`
+- **Signature**: `simplePrice(request: Simple.SimplePriceRequest, options?: RequestOptions): ApiPromise<Record<string, SimplePrice>, ApiError>`
 - **Wire**: `GET /simple/price`
 - **Auth**: any of `headerAuth`, `queryAuth` — the first one configured is sent
 - **Request body**: none — no `Content-Type` header is sent
 - **Returns**: `Record<string, SimplePrice>` — a bare `application/json` map; the success type *is* the map
-- **Error**: `ResponseError` — untyped, `payload.kind` always `"undeclared"`
+- **Error**: `CoinGeckoError` with `kind: "api"` — untyped, `payload.kind` always `"undeclared"`
 
 **Fields** — `Simple.SimplePriceRequest` (10):
 
@@ -38,21 +38,21 @@ Accessor: `client.simple` · Source: `src/resources/simple.ts` · 3 operations �
 
 ### simpleSupportedCurrencies
 
-- **Signature**: `simpleSupportedCurrencies(options?: RequestOptions): ApiPromise<string[], ResponseError>`
+- **Signature**: `simpleSupportedCurrencies(options?: RequestOptions): ApiPromise<string[], ApiError>`
 - **Wire**: `GET /simple/supported_vs_currencies`
 - **Auth**: any of `headerAuth`, `queryAuth` — the first one configured is sent
 - **Request body**: none — no `Content-Type` header is sent
 - **Returns**: `string[]` — a bare `application/json` array; the success type *is* the array, not a wrapper model
-- **Error**: `ResponseError` — untyped, `payload.kind` always `"undeclared"`
+- **Error**: `CoinGeckoError` with `kind: "api"` — untyped, `payload.kind` always `"undeclared"`
 
 ### simpleTokenPrice
 
-- **Signature**: `simpleTokenPrice(request: Simple.SimpleTokenPriceRequest, options?: RequestOptions): ApiPromise<Record<string, SimplePrice>, ResponseError>`
+- **Signature**: `simpleTokenPrice(request: Simple.SimpleTokenPriceRequest, options?: RequestOptions): ApiPromise<Record<string, SimplePrice>, ApiError>`
 - **Wire**: `GET /simple/token_price/{id}`
 - **Auth**: any of `headerAuth`, `queryAuth` — the first one configured is sent
 - **Request body**: none — no `Content-Type` header is sent
 - **Returns**: `Record<string, SimplePrice>` — a bare `application/json` map; the success type *is* the map
-- **Error**: `ResponseError` — untyped, `payload.kind` always `"undeclared"`
+- **Error**: `CoinGeckoError` with `kind: "api"` — untyped, `payload.kind` always `"undeclared"`
 
 **Fields** — `Simple.SimpleTokenPriceRequest` (8):
 

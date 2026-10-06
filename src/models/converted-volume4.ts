@@ -1,6 +1,7 @@
 import * as s from "../core/validation/index.js";
 import type { Schema } from "../core/validation/schema.js";
 
+/** Derivative converted volume */
 export type ConvertedVolume4 = {
   btc?: string;
   eth?: string;

@@ -3,10 +3,15 @@ import type { Schema } from "../core/validation/schema.js";
 import { contentSchema, type Content } from "./content.js";
 
 export type Data3 = {
+  /** NFT collection floor price */
   floorPrice: string;
+  /** NFT collection floor price in USD 24 hours percentage change */
   floorPriceInUsd24HPercentageChange: string;
+  /** NFT collection volume in 24 hours */
   h24Volume: string;
+  /** NFT collection 24 hours average sale price */
   h24AverageSalePrice: string;
+  /** NFT collection sparkline image URL */
   sparkline: string;
   content: Content | null;
 };

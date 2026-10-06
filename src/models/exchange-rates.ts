@@ -3,6 +3,7 @@ import type { Schema } from "../core/validation/schema.js";
 import { ratesSchema, type Rates } from "./rates.js";
 
 export type ExchangeRates = {
+  /** Exchange rates keyed by currency code */
   rates: Record<string, Rates>;
 };
 

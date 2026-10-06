@@ -43,43 +43,81 @@ import {
 } from "./volume24-hpercentage-change.js";
 
 export type NftData = {
+  /** NFT collection ID */
   id: string;
+  /** NFT collection web slug */
   webSlug: string;
+  /** NFT collection contract address */
   contractAddress: string;
+  /** NFT collection asset platform ID */
   assetPlatformId: string;
+  /** NFT collection name */
   name: string;
+  /** NFT collection symbol */
   symbol: string;
+  /** NFT collection image URLs */
   image: Image5;
+  /** NFT collection banner image URL */
   bannerImage: string;
+  /** NFT collection description */
   description: string;
+  /** NFT collection native currency */
   nativeCurrency: string;
+  /** NFT collection native currency symbol */
   nativeCurrencySymbol: string;
+  /** NFT collection market cap rank */
   marketCapRank: number | null;
+  /** NFT collection floor price */
   floorPrice: FloorPrice;
+  /** NFT collection market cap */
   marketCap: MarketCap;
+  /** NFT collection volume in 24 hours */
   volume24H: Volume24H;
+  /** NFT collection floor price in USD 24 hours percentage change */
   floorPriceInUsd24HPercentageChange: number;
+  /** NFT collection floor price 24 hours percentage change */
   floorPrice24HPercentageChange: FloorPrice24HPercentageChange;
+  /** NFT collection market cap 24 hours percentage change */
   marketCap24HPercentageChange: MarketCap24HPercentageChange;
+  /** NFT collection volume in 24 hours percentage change */
   volume24HPercentageChange: Volume24HPercentageChange;
+  /** Number of unique addresses owning the NFTs */
   numberOfUniqueAddresses: number;
+  /** Number of unique addresses 24 hours percentage change */
   numberOfUniqueAddresses24HPercentageChange: number;
+  /** NFT collection volume in USD 24 hours percentage change */
   volumeInUsd24HPercentageChange: number;
+  /** NFT collection total supply */
   totalSupply: number;
+  /** NFT collection one day sales */
   oneDaySales: number | null;
+  /** NFT collection one day sales 24 hours percentage change */
   oneDaySales24HPercentageChange: number;
+  /** NFT collection one day average sale price */
   oneDayAverageSalePrice: number | null;
+  /** NFT collection one day average sale price 24 hours percentage change */
   oneDayAverageSalePrice24HPercentageChange: number;
+  /** NFT collection links */
   links: Links2;
+  /** NFT collection floor price 7 days percentage change */
   floorPrice7DPercentageChange: FloorPrice7DPercentageChange;
+  /** NFT collection floor price 14 days percentage change */
   floorPrice14DPercentageChange: FloorPrice14DPercentageChange;
+  /** NFT collection floor price 30 days percentage change */
   floorPrice30DPercentageChange: FloorPrice30DPercentageChange;
+  /** NFT collection floor price 60 days percentage change */
   floorPrice60DPercentageChange: FloorPrice60DPercentageChange;
+  /** NFT collection floor price 1 year percentage change */
   floorPrice1YPercentageChange: FloorPrice1YPercentageChange;
+  /** NFT collection block explorer links */
   explorers: Explorer[];
+  /** NFT collection user favorites count */
   userFavoritesCount: number;
+  /** NFT collection all time highs */
   ath: Ath;
+  /** NFT collection all time highs change percentage */
   athChangePercentage: AthChangePercentage;
+  /** NFT collection all time highs date */
   athDate: AthDate;
 };
 
@@ -95,22 +133,22 @@ export const nftDataSchema: Schema<NftData> = s.object<NftData>({
   description: s.string(),
   nativeCurrency: s.string(),
   nativeCurrencySymbol: s.string(),
-  marketCapRank: s.nullable(s.number()),
+  marketCapRank: s.nullable(s.int()),
   floorPrice: floorPriceSchema,
   marketCap: marketCapSchema,
   volume24H: volume24HSchema,
-  floorPriceInUsd24HPercentageChange: s.number(),
+  floorPriceInUsd24HPercentageChange: s.float64(),
   floorPrice24HPercentageChange: floorPrice24HPercentageChangeSchema,
   marketCap24HPercentageChange: marketCap24HPercentageChangeSchema,
   volume24HPercentageChange: volume24HPercentageChangeSchema,
-  numberOfUniqueAddresses: s.number(),
-  numberOfUniqueAddresses24HPercentageChange: s.number(),
-  volumeInUsd24HPercentageChange: s.number(),
-  totalSupply: s.number(),
-  oneDaySales: s.nullable(s.number()),
-  oneDaySales24HPercentageChange: s.number(),
-  oneDayAverageSalePrice: s.nullable(s.number()),
-  oneDayAverageSalePrice24HPercentageChange: s.number(),
+  numberOfUniqueAddresses: s.float64(),
+  numberOfUniqueAddresses24HPercentageChange: s.float64(),
+  volumeInUsd24HPercentageChange: s.float64(),
+  totalSupply: s.float64(),
+  oneDaySales: s.nullable(s.float64()),
+  oneDaySales24HPercentageChange: s.float64(),
+  oneDayAverageSalePrice: s.nullable(s.float64()),
+  oneDayAverageSalePrice24HPercentageChange: s.float64(),
   links: links2Schema,
   floorPrice7DPercentageChange: floorPrice7DPercentageChangeSchema,
   floorPrice14DPercentageChange: floorPrice14DPercentageChangeSchema,
@@ -118,7 +156,7 @@ export const nftDataSchema: Schema<NftData> = s.object<NftData>({
   floorPrice60DPercentageChange: floorPrice60DPercentageChangeSchema,
   floorPrice1YPercentageChange: floorPrice1YPercentageChangeSchema,
   explorers: s.array(s.lazy(() => explorerSchema)),
-  userFavoritesCount: s.number(),
+  userFavoritesCount: s.int(),
   ath: athSchema,
   athChangePercentage: athChangePercentageSchema,
   athDate: athDateSchema,

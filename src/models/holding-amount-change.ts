@@ -1,6 +1,7 @@
 import * as s from "../core/validation/index.js";
 import type { Schema } from "../core/validation/schema.js";
 
+/** Holding amount changes over different timeframes */
 export type HoldingAmountChange = {
   D7?: number;
   D14?: number;
@@ -11,12 +12,12 @@ export type HoldingAmountChange = {
 };
 
 export const holdingAmountChangeSchema: Schema<HoldingAmountChange> = s.object<HoldingAmountChange>({
-  D7: s.optional(s.number()),
-  D14: s.optional(s.number()),
-  D30: s.optional(s.number()),
-  D90: s.optional(s.number()),
-  Y1: s.optional(s.number()),
-  ytd: s.optional(s.number()),
+  D7: s.optional(s.float64()),
+  D14: s.optional(s.float64()),
+  D30: s.optional(s.float64()),
+  D90: s.optional(s.float64()),
+  Y1: s.optional(s.float64()),
+  ytd: s.optional(s.float64()),
   _keysMap: {
     D7: "7d",
     D14: "14d",

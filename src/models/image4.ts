@@ -1,6 +1,7 @@
 import * as s from "../core/validation/index.js";
 import type { Schema } from "../core/validation/schema.js";
 
+/** Project image URLs */
 export type Image4 = {
   thumb?: string;
   small?: string;

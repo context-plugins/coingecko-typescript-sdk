@@ -4,24 +4,43 @@ import { convertedLast4Schema, type ConvertedLast4 } from "./converted-last4.js"
 import { convertedVolume4Schema, type ConvertedVolume4 } from "./converted-volume4.js";
 
 export type Ticker4 = {
+  /** Derivative ticker symbol */
   symbol: string;
+  /** Derivative base asset */
   base: string;
+  /** Derivative target asset */
   target: string;
+  /** Derivative base asset coin ID */
   coinId: string;
+  /** Derivative target asset coin ID */
   targetCoinId: string;
+  /** Derivative trade URL */
   tradeUrl: string;
+  /** Derivative contract type */
   contractType: string;
+  /** Derivative last price */
   last: number;
+  /** Derivative price percentage change in 24 hours */
   h24PercentageChange: number;
+  /** Derivative underlying asset price */
   index: number;
+  /** Difference of derivative price and index price in percentage */
   indexBasisPercentage: number;
+  /** Derivative bid-ask spread */
   bidAskSpread: number;
+  /** Derivative funding rate */
   fundingRate: number;
+  /** Derivative open interest in USD */
   openInterestUsd: number;
+  /** Derivative volume in 24 hours */
   h24Volume: number;
+  /** Derivative converted volume */
   convertedVolume: ConvertedVolume4;
+  /** Derivative converted last price */
   convertedLast: ConvertedLast4;
+  /** Derivative last traded time in UNIX timestamp */
   lastTraded: number;
+  /** Derivative expiry time in UNIX timestamp */
   expiredAt: number | null;
 };
 
@@ -33,18 +52,18 @@ export const ticker4Schema: Schema<Ticker4> = s.object<Ticker4>({
   targetCoinId: s.string(),
   tradeUrl: s.string(),
   contractType: s.string(),
-  last: s.number(),
-  h24PercentageChange: s.number(),
-  index: s.number(),
-  indexBasisPercentage: s.number(),
-  bidAskSpread: s.number(),
-  fundingRate: s.number(),
-  openInterestUsd: s.number(),
-  h24Volume: s.number(),
+  last: s.float64(),
+  h24PercentageChange: s.float64(),
+  index: s.float64(),
+  indexBasisPercentage: s.float64(),
+  bidAskSpread: s.float64(),
+  fundingRate: s.float64(),
+  openInterestUsd: s.float64(),
+  h24Volume: s.float64(),
   convertedVolume: convertedVolume4Schema,
   convertedLast: convertedLast4Schema,
-  lastTraded: s.number(),
-  expiredAt: s.nullable(s.number()),
+  lastTraded: s.float64(),
+  expiredAt: s.nullable(s.float64()),
   _keysMap: {
     coinId: "coin_id",
     targetCoinId: "target_coin_id",

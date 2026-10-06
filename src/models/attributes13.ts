@@ -15,7 +15,7 @@ export const attributes13Schema: Schema<Attributes13> = s.object<Attributes13>({
   address: s.optional(s.string()),
   name: s.optional(s.string()),
   symbol: s.optional(s.string()),
-  decimals: s.optional(s.number()),
+  decimals: s.optional(s.int()),
   imageUrl: s.optionalNullable(s.string()),
   coingeckoCoinId: s.optionalNullable(s.string()),
   coingeckoAssetPlatformId: s.optional(s.string()),

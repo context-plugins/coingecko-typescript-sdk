@@ -1,6 +1,7 @@
 import * as s from "../core/validation/index.js";
 import type { Schema } from "../core/validation/schema.js";
 
+/** Volume in USD over various timeframes */
 export type VolumeUsd = {
   m5?: string;
   m15?: string;

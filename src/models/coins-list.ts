@@ -2,9 +2,13 @@ import * as s from "../core/validation/index.js";
 import type { Schema } from "../core/validation/schema.js";
 
 export type CoinsList = {
+  /** Coin ID */
   id: string;
+  /** Coin symbol */
   symbol: string;
+  /** Coin name */
   name: string;
+  /** Asset platform and contract address */
   platforms?: Record<string, string | null>;
 };
 

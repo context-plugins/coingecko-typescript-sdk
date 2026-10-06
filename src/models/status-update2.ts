@@ -3,12 +3,19 @@ import type { Schema } from "../core/validation/schema.js";
 import { projectSchema, type Project } from "./project.js";
 
 export type StatusUpdate2 = {
+  /** Status update description */
   description?: string;
+  /** Status update category */
   category?: string;
+  /** Status update creation time */
   createdAt?: string;
+  /** Status update user */
   user?: string;
+  /** Status update user title */
   userTitle?: string;
+  /** Whether status update is pinned */
   pin?: boolean;
+  /** Project information */
   project?: Project;
 };
 

@@ -4,16 +4,16 @@
 
 Accessor: `client.coins` · Source: `src/resources/coins.ts` · 13 operations · Request types: namespace `Coins`
 
-**Type sources**: every type an operation names, with the file that declares it and the schema value exported beside it. Import every name from `coin-gecko-demo-api`; the `Source` path is where to **read** the shape, never what to import. `ResponseError` and the runtime error family are excluded — see sdk-map.md.
+**Type sources**: every type an operation names, with the file that declares it and the schema value exported beside it. Import every name from `coin-gecko`; the `Source` path is where to **read** the shape, never what to import. `ApiError`, the runtime error family and the file vocabulary are excluded — see sdk-map.md.
 
 ### coinsCategories
 
-- **Signature**: `coinsCategories(request: Coins.CoinsCategoriesRequest, options?: RequestOptions): ApiPromise<Category1[], ResponseError>`
+- **Signature**: `coinsCategories(request: Coins.CoinsCategoriesRequest, options?: RequestOptions): ApiPromise<Category1[], ApiError>`
 - **Wire**: `GET /coins/categories`
 - **Auth**: any of `headerAuth`, `queryAuth` — the first one configured is sent
 - **Request body**: none — no `Content-Type` header is sent
 - **Returns**: `Category1[]` — a bare `application/json` array; the success type *is* the array, not a wrapper model
-- **Error**: `ResponseError` — untyped, `payload.kind` always `"undeclared"`
+- **Error**: `CoinGeckoError` with `kind: "api"` — untyped, `payload.kind` always `"undeclared"`
 
 **Fields** — `Coins.CoinsCategoriesRequest` (1):
 
@@ -28,12 +28,12 @@ Accessor: `client.coins` · Source: `src/resources/coins.ts` · 13 operations ·
 
 ### coinsCategoriesList
 
-- **Signature**: `coinsCategoriesList(options?: RequestOptions): ApiPromise<CategoriesList[], ResponseError>`
+- **Signature**: `coinsCategoriesList(options?: RequestOptions): ApiPromise<CategoriesList[], ApiError>`
 - **Wire**: `GET /coins/categories/list`
 - **Auth**: any of `headerAuth`, `queryAuth` — the first one configured is sent
 - **Request body**: none — no `Content-Type` header is sent
 - **Returns**: `CategoriesList[]` — a bare `application/json` array; the success type *is* the array, not a wrapper model
-- **Error**: `ResponseError` — untyped, `payload.kind` always `"undeclared"`
+- **Error**: `CoinGeckoError` with `kind: "api"` — untyped, `payload.kind` always `"undeclared"`
 
 | Type | Schema value | Source |
 | --- | --- | --- |
@@ -41,12 +41,12 @@ Accessor: `client.coins` · Source: `src/resources/coins.ts` · 13 operations ·
 
 ### coinsContractAddress
 
-- **Signature**: `coinsContractAddress(request: Coins.CoinsContractAddressRequest, options?: RequestOptions): ApiPromise<CoinsContractAddress, ResponseError>`
+- **Signature**: `coinsContractAddress(request: Coins.CoinsContractAddressRequest, options?: RequestOptions): ApiPromise<CoinsContractAddress, ApiError>`
 - **Wire**: `GET /coins/{id}/contract/{contract_address}`
 - **Auth**: any of `headerAuth`, `queryAuth` — the first one configured is sent
 - **Request body**: none — no `Content-Type` header is sent
 - **Returns**: `CoinsContractAddress`
-- **Error**: `ResponseError` — untyped, `payload.kind` always `"undeclared"`
+- **Error**: `CoinGeckoError` with `kind: "api"` — untyped, `payload.kind` always `"undeclared"`
 
 **Fields** — `Coins.CoinsContractAddressRequest` (2):
 
@@ -61,12 +61,12 @@ Accessor: `client.coins` · Source: `src/resources/coins.ts` · 13 operations ·
 
 ### coinsId
 
-- **Signature**: `coinsId(request: Coins.CoinsIdRequest, options?: RequestOptions): ApiPromise<CoinsId, ResponseError>`
+- **Signature**: `coinsId(request: Coins.CoinsIdRequest, options?: RequestOptions): ApiPromise<CoinsId, ApiError>`
 - **Wire**: `GET /coins/{id}`
 - **Auth**: any of `headerAuth`, `queryAuth` — the first one configured is sent
 - **Request body**: none — no `Content-Type` header is sent
 - **Returns**: `CoinsId`
-- **Error**: `ResponseError` — untyped, `payload.kind` always `"undeclared"`
+- **Error**: `CoinGeckoError` with `kind: "api"` — untyped, `payload.kind` always `"undeclared"`
 
 **Fields** — `Coins.CoinsIdRequest` (9):
 
@@ -89,12 +89,12 @@ Accessor: `client.coins` · Source: `src/resources/coins.ts` · 13 operations ·
 
 ### coinsIdHistory
 
-- **Signature**: `coinsIdHistory(request: Coins.CoinsIdHistoryRequest, options?: RequestOptions): ApiPromise<CoinsIdHistory, ResponseError>`
+- **Signature**: `coinsIdHistory(request: Coins.CoinsIdHistoryRequest, options?: RequestOptions): ApiPromise<CoinsIdHistory, ApiError>`
 - **Wire**: `GET /coins/{id}/history`
 - **Auth**: any of `headerAuth`, `queryAuth` — the first one configured is sent
 - **Request body**: none — no `Content-Type` header is sent
 - **Returns**: `CoinsIdHistory`
-- **Error**: `ResponseError` — untyped, `payload.kind` always `"undeclared"`
+- **Error**: `CoinGeckoError` with `kind: "api"` — untyped, `payload.kind` always `"undeclared"`
 
 **Fields** — `Coins.CoinsIdHistoryRequest` (3):
 
@@ -110,12 +110,12 @@ Accessor: `client.coins` · Source: `src/resources/coins.ts` · 13 operations ·
 
 ### coinsIdMarketChart
 
-- **Signature**: `coinsIdMarketChart(request: Coins.CoinsIdMarketChartRequest, options?: RequestOptions): ApiPromise<CoinsMarketChart, ResponseError>`
+- **Signature**: `coinsIdMarketChart(request: Coins.CoinsIdMarketChartRequest, options?: RequestOptions): ApiPromise<CoinsMarketChart, ApiError>`
 - **Wire**: `GET /coins/{id}/market_chart`
 - **Auth**: any of `headerAuth`, `queryAuth` — the first one configured is sent
 - **Request body**: none — no `Content-Type` header is sent
 - **Returns**: `CoinsMarketChart`
-- **Error**: `ResponseError` — untyped, `payload.kind` always `"undeclared"`
+- **Error**: `CoinGeckoError` with `kind: "api"` — untyped, `payload.kind` always `"undeclared"`
 
 **Fields** — `Coins.CoinsIdMarketChartRequest` (5):
 
@@ -135,12 +135,12 @@ Accessor: `client.coins` · Source: `src/resources/coins.ts` · 13 operations ·
 
 ### coinsIdMarketChartRange
 
-- **Signature**: `coinsIdMarketChartRange(request: Coins.CoinsIdMarketChartRangeRequest, options?: RequestOptions): ApiPromise<CoinsMarketChart, ResponseError>`
+- **Signature**: `coinsIdMarketChartRange(request: Coins.CoinsIdMarketChartRangeRequest, options?: RequestOptions): ApiPromise<CoinsMarketChart, ApiError>`
 - **Wire**: `GET /coins/{id}/market_chart/range`
 - **Auth**: any of `headerAuth`, `queryAuth` — the first one configured is sent
 - **Request body**: none — no `Content-Type` header is sent
 - **Returns**: `CoinsMarketChart`
-- **Error**: `ResponseError` — untyped, `payload.kind` always `"undeclared"`
+- **Error**: `CoinGeckoError` with `kind: "api"` — untyped, `payload.kind` always `"undeclared"`
 
 **Fields** — `Coins.CoinsIdMarketChartRangeRequest` (5):
 
@@ -159,12 +159,12 @@ Accessor: `client.coins` · Source: `src/resources/coins.ts` · 13 operations ·
 
 ### coinsIdOhlc
 
-- **Signature**: `coinsIdOhlc(request: Coins.CoinsIdOhlcRequest, options?: RequestOptions): ApiPromise<number[][], ResponseError>`
+- **Signature**: `coinsIdOhlc(request: Coins.CoinsIdOhlcRequest, options?: RequestOptions): ApiPromise<number[][], ApiError>`
 - **Wire**: `GET /coins/{id}/ohlc`
 - **Auth**: any of `headerAuth`, `queryAuth` — the first one configured is sent
 - **Request body**: none — no `Content-Type` header is sent
 - **Returns**: `number[][]` — a bare `application/json` array; the success type *is* the array, not a wrapper model
-- **Error**: `ResponseError` — untyped, `payload.kind` always `"undeclared"`
+- **Error**: `CoinGeckoError` with `kind: "api"` — untyped, `payload.kind` always `"undeclared"`
 
 **Fields** — `Coins.CoinsIdOhlcRequest` (4):
 
@@ -182,12 +182,12 @@ Accessor: `client.coins` · Source: `src/resources/coins.ts` · 13 operations ·
 
 ### coinsIdTickers
 
-- **Signature**: `coinsIdTickers(request: Coins.CoinsIdTickersRequest, options?: RequestOptions): ApiPromise<CoinsIdTickers, ResponseError>`
+- **Signature**: `coinsIdTickers(request: Coins.CoinsIdTickersRequest, options?: RequestOptions): ApiPromise<CoinsIdTickers, ApiError>`
 - **Wire**: `GET /coins/{id}/tickers`
 - **Auth**: any of `headerAuth`, `queryAuth` — the first one configured is sent
 - **Request body**: none — no `Content-Type` header is sent
 - **Returns**: `CoinsIdTickers`
-- **Error**: `ResponseError` — untyped, `payload.kind` always `"undeclared"`
+- **Error**: `CoinGeckoError` with `kind: "api"` — untyped, `payload.kind` always `"undeclared"`
 
 **Fields** — `Coins.CoinsIdTickersRequest` (7):
 
@@ -209,12 +209,12 @@ Accessor: `client.coins` · Source: `src/resources/coins.ts` · 13 operations ·
 
 ### coinsList
 
-- **Signature**: `coinsList(request: Coins.CoinsListRequest, options?: RequestOptions): ApiPromise<CoinsList[], ResponseError>`
+- **Signature**: `coinsList(request: Coins.CoinsListRequest, options?: RequestOptions): ApiPromise<CoinsList[], ApiError>`
 - **Wire**: `GET /coins/list`
 - **Auth**: any of `headerAuth`, `queryAuth` — the first one configured is sent
 - **Request body**: none — no `Content-Type` header is sent
 - **Returns**: `CoinsList[]` — a bare `application/json` array; the success type *is* the array, not a wrapper model
-- **Error**: `ResponseError` — untyped, `payload.kind` always `"undeclared"`
+- **Error**: `CoinGeckoError` with `kind: "api"` — untyped, `payload.kind` always `"undeclared"`
 
 **Fields** — `Coins.CoinsListRequest` (2):
 
@@ -230,12 +230,12 @@ Accessor: `client.coins` · Source: `src/resources/coins.ts` · 13 operations ·
 
 ### coinsMarkets
 
-- **Signature**: `coinsMarkets(request: Coins.CoinsMarketsRequest, options?: RequestOptions): ApiPromise<CoinsMarket[], ResponseError>`
+- **Signature**: `coinsMarkets(request: Coins.CoinsMarketsRequest, options?: RequestOptions): ApiPromise<CoinsMarket[], ApiError>`
 - **Wire**: `GET /coins/markets`
 - **Auth**: any of `headerAuth`, `queryAuth` — the first one configured is sent
 - **Request body**: none — no `Content-Type` header is sent
 - **Returns**: `CoinsMarket[]` — a bare `application/json` array; the success type *is* the array, not a wrapper model
-- **Error**: `ResponseError` — untyped, `payload.kind` always `"undeclared"`
+- **Error**: `CoinGeckoError` with `kind: "api"` — untyped, `payload.kind` always `"undeclared"`
 
 **Fields** — `Coins.CoinsMarketsRequest` (14):
 
@@ -266,12 +266,12 @@ Accessor: `client.coins` · Source: `src/resources/coins.ts` · 13 operations ·
 
 ### contractAddressMarketChart
 
-- **Signature**: `contractAddressMarketChart(request: Coins.ContractAddressMarketChartRequest, options?: RequestOptions): ApiPromise<CoinsMarketChart, ResponseError>`
+- **Signature**: `contractAddressMarketChart(request: Coins.ContractAddressMarketChartRequest, options?: RequestOptions): ApiPromise<CoinsMarketChart, ApiError>`
 - **Wire**: `GET /coins/{id}/contract/{contract_address}/market_chart`
 - **Auth**: any of `headerAuth`, `queryAuth` — the first one configured is sent
 - **Request body**: none — no `Content-Type` header is sent
 - **Returns**: `CoinsMarketChart`
-- **Error**: `ResponseError` — untyped, `payload.kind` always `"undeclared"`
+- **Error**: `CoinGeckoError` with `kind: "api"` — untyped, `payload.kind` always `"undeclared"`
 
 **Fields** — `Coins.ContractAddressMarketChartRequest` (6):
 
@@ -292,12 +292,12 @@ Accessor: `client.coins` · Source: `src/resources/coins.ts` · 13 operations ·
 
 ### contractAddressMarketChartRange
 
-- **Signature**: `contractAddressMarketChartRange(request: Coins.ContractAddressMarketChartRangeRequest, options?: RequestOptions): ApiPromise<CoinsMarketChart, ResponseError>`
+- **Signature**: `contractAddressMarketChartRange(request: Coins.ContractAddressMarketChartRangeRequest, options?: RequestOptions): ApiPromise<CoinsMarketChart, ApiError>`
 - **Wire**: `GET /coins/{id}/contract/{contract_address}/market_chart/range`
 - **Auth**: any of `headerAuth`, `queryAuth` — the first one configured is sent
 - **Request body**: none — no `Content-Type` header is sent
 - **Returns**: `CoinsMarketChart`
-- **Error**: `ResponseError` — untyped, `payload.kind` always `"undeclared"`
+- **Error**: `CoinGeckoError` with `kind: "api"` — untyped, `payload.kind` always `"undeclared"`
 
 **Fields** — `Coins.ContractAddressMarketChartRangeRequest` (6):
 

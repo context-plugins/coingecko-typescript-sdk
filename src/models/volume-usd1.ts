@@ -1,6 +1,7 @@
 import * as s from "../core/validation/index.js";
 import type { Schema } from "../core/validation/schema.js";
 
+/** Volume in USD */
 export type VolumeUsd1 = {
   h24?: string;
 };

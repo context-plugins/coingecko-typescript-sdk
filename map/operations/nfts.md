@@ -4,16 +4,16 @@
 
 Accessor: `client.nfts` · Source: `src/resources/nfts.ts` · 3 operations · Request types: namespace `Nfts`
 
-**Type sources**: every type an operation names, with the file that declares it and the schema value exported beside it. Import every name from `coin-gecko-demo-api`; the `Source` path is where to **read** the shape, never what to import. `ResponseError` and the runtime error family are excluded — see sdk-map.md.
+**Type sources**: every type an operation names, with the file that declares it and the schema value exported beside it. Import every name from `coin-gecko`; the `Source` path is where to **read** the shape, never what to import. `ApiError`, the runtime error family and the file vocabulary are excluded — see sdk-map.md.
 
 ### nftsContractAddress
 
-- **Signature**: `nftsContractAddress(request: Nfts.NftsContractAddressRequest, options?: RequestOptions): ApiPromise<NftData, ResponseError>`
+- **Signature**: `nftsContractAddress(request: Nfts.NftsContractAddressRequest, options?: RequestOptions): ApiPromise<NftData, ApiError>`
 - **Wire**: `GET /nfts/{asset_platform_id}/contract/{contract_address}`
 - **Auth**: any of `headerAuth`, `queryAuth` — the first one configured is sent
 - **Request body**: none — no `Content-Type` header is sent
 - **Returns**: `NftData`
-- **Error**: `ResponseError` — untyped, `payload.kind` always `"undeclared"`
+- **Error**: `CoinGeckoError` with `kind: "api"` — untyped, `payload.kind` always `"undeclared"`
 
 **Fields** — `Nfts.NftsContractAddressRequest` (2):
 
@@ -28,12 +28,12 @@ Accessor: `client.nfts` · Source: `src/resources/nfts.ts` · 3 operations · Re
 
 ### nftsId
 
-- **Signature**: `nftsId(request: Nfts.NftsIdRequest, options?: RequestOptions): ApiPromise<NftData, ResponseError>`
+- **Signature**: `nftsId(request: Nfts.NftsIdRequest, options?: RequestOptions): ApiPromise<NftData, ApiError>`
 - **Wire**: `GET /nfts/{id}`
 - **Auth**: any of `headerAuth`, `queryAuth` — the first one configured is sent
 - **Request body**: none — no `Content-Type` header is sent
 - **Returns**: `NftData`
-- **Error**: `ResponseError` — untyped, `payload.kind` always `"undeclared"`
+- **Error**: `CoinGeckoError` with `kind: "api"` — untyped, `payload.kind` always `"undeclared"`
 
 **Fields** — `Nfts.NftsIdRequest` (1):
 
@@ -47,12 +47,12 @@ Accessor: `client.nfts` · Source: `src/resources/nfts.ts` · 3 operations · Re
 
 ### nftsList
 
-- **Signature**: `nftsList(request: Nfts.NftsListRequest, options?: RequestOptions): ApiPromise<NfTsList[], ResponseError>`
+- **Signature**: `nftsList(request: Nfts.NftsListRequest, options?: RequestOptions): ApiPromise<NfTsList[], ApiError>`
 - **Wire**: `GET /nfts/list`
 - **Auth**: any of `headerAuth`, `queryAuth` — the first one configured is sent
 - **Request body**: none — no `Content-Type` header is sent
 - **Returns**: `NfTsList[]` — a bare `application/json` array; the success type *is* the array, not a wrapper model
-- **Error**: `ResponseError` — untyped, `payload.kind` always `"undeclared"`
+- **Error**: `CoinGeckoError` with `kind: "api"` — untyped, `payload.kind` always `"undeclared"`
 
 **Fields** — `Nfts.NftsListRequest` (3):
 

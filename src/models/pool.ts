@@ -5,6 +5,7 @@ import { included6Schema, type Included6 } from "./included6.js";
 
 export type Pool = {
   data: Data21[];
+  /** Included related resources, present when include parameter is specified */
   included?: Included6[];
 };
 

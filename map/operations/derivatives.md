@@ -4,16 +4,16 @@
 
 Accessor: `client.derivatives` · Source: `src/resources/derivatives.ts` · 4 operations · Request types: namespace `Derivatives`
 
-**Type sources**: every type an operation names, with the file that declares it and the schema value exported beside it. Import every name from `coin-gecko-demo-api`; the `Source` path is where to **read** the shape, never what to import. `ResponseError` and the runtime error family are excluded — see sdk-map.md.
+**Type sources**: every type an operation names, with the file that declares it and the schema value exported beside it. Import every name from `coin-gecko`; the `Source` path is where to **read** the shape, never what to import. `ApiError`, the runtime error family and the file vocabulary are excluded — see sdk-map.md.
 
 ### derivativesExchanges
 
-- **Signature**: `derivativesExchanges(request: Derivatives.DerivativesExchangesRequest, options?: RequestOptions): ApiPromise<DerivativesExchange[], ResponseError>`
+- **Signature**: `derivativesExchanges(request: Derivatives.DerivativesExchangesRequest, options?: RequestOptions): ApiPromise<DerivativesExchange[], ApiError>`
 - **Wire**: `GET /derivatives/exchanges`
 - **Auth**: any of `headerAuth`, `queryAuth` — the first one configured is sent
 - **Request body**: none — no `Content-Type` header is sent
 - **Returns**: `DerivativesExchange[]` — a bare `application/json` array; the success type *is* the array, not a wrapper model
-- **Error**: `ResponseError` — untyped, `payload.kind` always `"undeclared"`
+- **Error**: `CoinGeckoError` with `kind: "api"` — untyped, `payload.kind` always `"undeclared"`
 
 **Fields** — `Derivatives.DerivativesExchangesRequest` (3):
 
@@ -30,12 +30,12 @@ Accessor: `client.derivatives` · Source: `src/resources/derivatives.ts` · 4 op
 
 ### derivativesExchangesId
 
-- **Signature**: `derivativesExchangesId(request: Derivatives.DerivativesExchangesIdRequest, options?: RequestOptions): ApiPromise<DerivativesExchangesId, ResponseError>`
+- **Signature**: `derivativesExchangesId(request: Derivatives.DerivativesExchangesIdRequest, options?: RequestOptions): ApiPromise<DerivativesExchangesId, ApiError>`
 - **Wire**: `GET /derivatives/exchanges/{id}`
 - **Auth**: any of `headerAuth`, `queryAuth` — the first one configured is sent
 - **Request body**: none — no `Content-Type` header is sent
 - **Returns**: `DerivativesExchangesId`
-- **Error**: `ResponseError` — untyped, `payload.kind` always `"undeclared"`
+- **Error**: `CoinGeckoError` with `kind: "api"` — untyped, `payload.kind` always `"undeclared"`
 
 **Fields** — `Derivatives.DerivativesExchangesIdRequest` (2):
 
@@ -51,12 +51,12 @@ Accessor: `client.derivatives` · Source: `src/resources/derivatives.ts` · 4 op
 
 ### derivativesExchangesList
 
-- **Signature**: `derivativesExchangesList(options?: RequestOptions): ApiPromise<DerivativesExchangesList[], ResponseError>`
+- **Signature**: `derivativesExchangesList(options?: RequestOptions): ApiPromise<DerivativesExchangesList[], ApiError>`
 - **Wire**: `GET /derivatives/exchanges/list`
 - **Auth**: any of `headerAuth`, `queryAuth` — the first one configured is sent
 - **Request body**: none — no `Content-Type` header is sent
 - **Returns**: `DerivativesExchangesList[]` — a bare `application/json` array; the success type *is* the array, not a wrapper model
-- **Error**: `ResponseError` — untyped, `payload.kind` always `"undeclared"`
+- **Error**: `CoinGeckoError` with `kind: "api"` — untyped, `payload.kind` always `"undeclared"`
 
 | Type | Schema value | Source |
 | --- | --- | --- |
@@ -64,12 +64,12 @@ Accessor: `client.derivatives` · Source: `src/resources/derivatives.ts` · 4 op
 
 ### derivativesTickers
 
-- **Signature**: `derivativesTickers(options?: RequestOptions): ApiPromise<DerivativesTicker[], ResponseError>`
+- **Signature**: `derivativesTickers(options?: RequestOptions): ApiPromise<DerivativesTicker[], ApiError>`
 - **Wire**: `GET /derivatives`
 - **Auth**: any of `headerAuth`, `queryAuth` — the first one configured is sent
 - **Request body**: none — no `Content-Type` header is sent
 - **Returns**: `DerivativesTicker[]` — a bare `application/json` array; the success type *is* the array, not a wrapper model
-- **Error**: `ResponseError` — untyped, `payload.kind` always `"undeclared"`
+- **Error**: `CoinGeckoError` with `kind: "api"` — untyped, `payload.kind` always `"undeclared"`
 
 | Type | Schema value | Source |
 | --- | --- | --- |

@@ -2,10 +2,15 @@ import * as s from "../core/validation/index.js";
 import type { Schema } from "../core/validation/schema.js";
 
 export type Exchange = {
+  /** Exchange ID */
   id: string;
+  /** Exchange name */
   name: string;
+  /** Exchange market type */
   marketType: string;
+  /** Exchange thumb image URL */
   thumb: string;
+  /** Exchange large image URL */
   large: string;
 };
 

@@ -1,6 +1,7 @@
 import * as s from "../core/validation/index.js";
 import type { Schema } from "../core/validation/schema.js";
 
+/** Base token metadata */
 export type Base = {
   name?: string;
   symbol?: string;

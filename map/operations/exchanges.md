@@ -4,16 +4,16 @@
 
 Accessor: `client.exchanges` · Source: `src/resources/exchanges.ts` · 6 operations · Request types: namespace `Exchanges`
 
-**Type sources**: every type an operation names, with the file that declares it and the schema value exported beside it. Import every name from `coin-gecko-demo-api`; the `Source` path is where to **read** the shape, never what to import. `ResponseError` and the runtime error family are excluded — see sdk-map.md.
+**Type sources**: every type an operation names, with the file that declares it and the schema value exported beside it. Import every name from `coin-gecko`; the `Source` path is where to **read** the shape, never what to import. `ApiError`, the runtime error family and the file vocabulary are excluded — see sdk-map.md.
 
 ### exchangeRates
 
-- **Signature**: `exchangeRates(options?: RequestOptions): ApiPromise<ExchangeRates, ResponseError>`
+- **Signature**: `exchangeRates(options?: RequestOptions): ApiPromise<ExchangeRates, ApiError>`
 - **Wire**: `GET /exchange_rates`
 - **Auth**: any of `headerAuth`, `queryAuth` — the first one configured is sent
 - **Request body**: none — no `Content-Type` header is sent
 - **Returns**: `ExchangeRates`
-- **Error**: `ResponseError` — untyped, `payload.kind` always `"undeclared"`
+- **Error**: `CoinGeckoError` with `kind: "api"` — untyped, `payload.kind` always `"undeclared"`
 
 | Type | Schema value | Source |
 | --- | --- | --- |
@@ -21,12 +21,12 @@ Accessor: `client.exchanges` · Source: `src/resources/exchanges.ts` · 6 operat
 
 ### exchanges
 
-- **Signature**: `exchanges(request: Exchanges.ExchangesRequest, options?: RequestOptions): ApiPromise<Exchange1[], ResponseError>`
+- **Signature**: `exchanges(request: Exchanges.ExchangesRequest, options?: RequestOptions): ApiPromise<Exchange1[], ApiError>`
 - **Wire**: `GET /exchanges`
 - **Auth**: any of `headerAuth`, `queryAuth` — the first one configured is sent
 - **Request body**: none — no `Content-Type` header is sent
 - **Returns**: `Exchange1[]` — a bare `application/json` array; the success type *is* the array, not a wrapper model
-- **Error**: `ResponseError` — untyped, `payload.kind` always `"undeclared"`
+- **Error**: `CoinGeckoError` with `kind: "api"` — untyped, `payload.kind` always `"undeclared"`
 
 **Fields** — `Exchanges.ExchangesRequest` (2):
 
@@ -41,12 +41,12 @@ Accessor: `client.exchanges` · Source: `src/resources/exchanges.ts` · 6 operat
 
 ### exchangesId
 
-- **Signature**: `exchangesId(request: Exchanges.ExchangesIdRequest, options?: RequestOptions): ApiPromise<ExchangesId, ResponseError>`
+- **Signature**: `exchangesId(request: Exchanges.ExchangesIdRequest, options?: RequestOptions): ApiPromise<ExchangesId, ApiError>`
 - **Wire**: `GET /exchanges/{id}`
 - **Auth**: any of `headerAuth`, `queryAuth` — the first one configured is sent
 - **Request body**: none — no `Content-Type` header is sent
 - **Returns**: `ExchangesId`
-- **Error**: `ResponseError` — untyped, `payload.kind` always `"undeclared"`
+- **Error**: `CoinGeckoError` with `kind: "api"` — untyped, `payload.kind` always `"undeclared"`
 
 **Fields** — `Exchanges.ExchangesIdRequest` (2):
 
@@ -62,12 +62,12 @@ Accessor: `client.exchanges` · Source: `src/resources/exchanges.ts` · 6 operat
 
 ### exchangesIdTickers
 
-- **Signature**: `exchangesIdTickers(request: Exchanges.ExchangesIdTickersRequest, options?: RequestOptions): ApiPromise<CoinsIdTickers, ResponseError>`
+- **Signature**: `exchangesIdTickers(request: Exchanges.ExchangesIdTickersRequest, options?: RequestOptions): ApiPromise<CoinsIdTickers, ApiError>`
 - **Wire**: `GET /exchanges/{id}/tickers`
 - **Auth**: any of `headerAuth`, `queryAuth` — the first one configured is sent
 - **Request body**: none — no `Content-Type` header is sent
 - **Returns**: `CoinsIdTickers`
-- **Error**: `ResponseError` — untyped, `payload.kind` always `"undeclared"`
+- **Error**: `CoinGeckoError` with `kind: "api"` — untyped, `payload.kind` always `"undeclared"`
 
 **Fields** — `Exchanges.ExchangesIdTickersRequest` (7):
 
@@ -89,12 +89,12 @@ Accessor: `client.exchanges` · Source: `src/resources/exchanges.ts` · 6 operat
 
 ### exchangesIdVolumeChart
 
-- **Signature**: `exchangesIdVolumeChart(request: Exchanges.ExchangesIdVolumeChartRequest, options?: RequestOptions): ApiPromise<ExchangeVolumeChart[][], ResponseError>`
+- **Signature**: `exchangesIdVolumeChart(request: Exchanges.ExchangesIdVolumeChartRequest, options?: RequestOptions): ApiPromise<ExchangeVolumeChart[][], ApiError>`
 - **Wire**: `GET /exchanges/{id}/volume_chart`
 - **Auth**: any of `headerAuth`, `queryAuth` — the first one configured is sent
 - **Request body**: none — no `Content-Type` header is sent
 - **Returns**: `ExchangeVolumeChart[][]` — a bare `application/json` array; the success type *is* the array, not a wrapper model
-- **Error**: `ResponseError` — untyped, `payload.kind` always `"undeclared"`
+- **Error**: `CoinGeckoError` with `kind: "api"` — untyped, `payload.kind` always `"undeclared"`
 
 **Fields** — `Exchanges.ExchangesIdVolumeChartRequest` (2):
 
@@ -110,12 +110,12 @@ Accessor: `client.exchanges` · Source: `src/resources/exchanges.ts` · 6 operat
 
 ### exchangesList
 
-- **Signature**: `exchangesList(request: Exchanges.ExchangesListRequest, options?: RequestOptions): ApiPromise<ExchangesList[], ResponseError>`
+- **Signature**: `exchangesList(request: Exchanges.ExchangesListRequest, options?: RequestOptions): ApiPromise<ExchangesList[], ApiError>`
 - **Wire**: `GET /exchanges/list`
 - **Auth**: any of `headerAuth`, `queryAuth` — the first one configured is sent
 - **Request body**: none — no `Content-Type` header is sent
 - **Returns**: `ExchangesList[]` — a bare `application/json` array; the success type *is* the array, not a wrapper model
-- **Error**: `ResponseError` — untyped, `payload.kind` always `"undeclared"`
+- **Error**: `CoinGeckoError` with `kind: "api"` — untyped, `payload.kind` always `"undeclared"`
 
 **Fields** — `Exchanges.ExchangesListRequest` (1):
 

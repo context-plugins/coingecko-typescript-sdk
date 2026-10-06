@@ -1,50 +1,25 @@
-import type { UrlTemplate } from "./core/api-request.js";
-import { SdkError } from "./core/errors.js";
-
-export const ServerEnvironment = {
-  Production: "production",
-} as const;
-export type ServerEnvironment = (typeof ServerEnvironment)[keyof typeof ServerEnvironment];
-
-export type DefaultServerOptions = {
-  production?: { baseUrl?: string };
-};
-
-export type ServerOptions = {
-  default?: DefaultServerOptions;
-};
+import type { ClientOptions } from "./client-options.js";
+import type { ServerBase, UrlTemplate } from "./core/api-request.js";
+import { resolveBaseUrl } from "./core/url.js";
+import * as s from "./core/validation/index.js";
 
 export type Servers = {
-  default: (subPath: string) => UrlTemplate;
+  default: <Path extends string>(subPath: Path) => UrlTemplate<Path>;
 };
 
-export const DEFAULT_SERVER_OPTIONS = {
-  default: {
-    production: { baseUrl: "https://api.coingecko.com/api/v3" },
-  },
-} as const satisfies ServerOptions;
+const serverSchemas = {
+  baseUrl: s.of(s.defaulted(s.string(), "https://api.coingecko.com/api/v3")),
+};
 
-export function buildServers(environment: ServerEnvironment, options: ServerOptions): Servers {
+export function buildServers(options: ClientOptions): Servers {
+  const base = {
+    default: resolveBaseUrl(defaultServer(options)),
+  };
   return {
-    default: (s) => defaultServer(environment, s, options.default),
+    default: (subPath) => ({ baseUrl: base.default, subPath }),
   };
 }
 
-function defaultServer(
-  environment: ServerEnvironment,
-  subPath: string,
-  options?: DefaultServerOptions,
-): UrlTemplate {
-  switch (environment) {
-    case ServerEnvironment.Production: {
-      const production = { ...DEFAULT_SERVER_OPTIONS.default.production, ...options?.production };
-      return { baseUrl: production.baseUrl, subPath };
-    }
-    default:
-      unknownEnvironment(environment);
-  }
-}
-
-function unknownEnvironment(environment: never): never {
-  throw new SdkError({ message: `Unknown server environment: ${String(environment)}` });
+function defaultServer(options: ClientOptions): ServerBase {
+  return { baseUrl: serverSchemas.baseUrl.decode(options.serverOptions?.baseUrl) };
 }

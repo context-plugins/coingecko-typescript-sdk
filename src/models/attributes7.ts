@@ -6,31 +6,57 @@ import { image6Schema, type Image6 } from "./image6.js";
 import { isHoneypotSchema, type IsHoneypot } from "./unions/is-honeypot.js";
 
 export type Attributes7 = {
+  /** Token contract address */
   address: string;
+  /** Token name */
   name: string;
+  /** Token symbol */
   symbol: string;
+  /** Token decimals */
   decimals: number;
+  /** Token image URL */
   imageUrl: string | null;
+  /** Token image URLs in different sizes */
   image: Image6;
+  /** Token banner image URL */
   bannerImageUrl: string | null;
+  /** CoinGecko coin ID */
   coingeckoCoinId: string | null;
+  /** Token websites */
   websites: string[];
+  /** Discord URL */
   discordUrl: string | null;
+  /** Farcaster URL */
   farcasterUrl: string | null;
+  /** Zora URL */
   zoraUrl: string | null;
+  /** Telegram handle */
   telegramHandle: string | null;
+  /** Twitter handle */
   twitterHandle: string | null;
+  /** Token description */
   description: string | null;
+  /** GeckoTerminal trust score */
   gtScore: number;
+  /** GeckoTerminal trust score breakdown */
   gtScoreDetails: GtScoreDetails;
+  /** Whether the token is verified on GeckoTerminal */
   gtVerified: boolean;
+  /** Token categories */
   categories: string[];
+  /** GeckoTerminal category IDs */
   gtCategoryIds: string[];
+  /** Token holder information */
   holders: Holders;
+  /** Mint authority status */
   mintAuthority: string | null;
+  /** Freeze authority status */
   freezeAuthority: string | null;
+  /** Whether the token is a honeypot (boolean or 'unknown') */
   isHoneypot: IsHoneypot;
+  /** Developer wallet address */
   developerAddress: string | null;
+  /** Developer holding as a percentage of total supply */
   developerHoldingPercentage: string | null;
 };
 
@@ -38,7 +64,7 @@ export const attributes7Schema: Schema<Attributes7> = s.object<Attributes7>({
   address: s.string(),
   name: s.string(),
   symbol: s.string(),
-  decimals: s.number(),
+  decimals: s.int(),
   imageUrl: s.nullable(s.string()),
   image: image6Schema,
   bannerImageUrl: s.nullable(s.string()),
@@ -50,7 +76,7 @@ export const attributes7Schema: Schema<Attributes7> = s.object<Attributes7>({
   telegramHandle: s.nullable(s.string()),
   twitterHandle: s.nullable(s.string()),
   description: s.nullable(s.string()),
-  gtScore: s.number(),
+  gtScore: s.float64(),
   gtScoreDetails: gtScoreDetailsSchema,
   gtVerified: s.boolean(),
   categories: s.array(s.string()),

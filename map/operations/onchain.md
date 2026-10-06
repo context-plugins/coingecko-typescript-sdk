@@ -4,16 +4,16 @@
 
 Accessor: `client.onchain` · Source: `src/resources/onchain.ts` · 20 operations · Request types: namespace `Onchain`
 
-**Type sources**: every type an operation names, with the file that declares it and the schema value exported beside it. Import every name from `coin-gecko-demo-api`; the `Source` path is where to **read** the shape, never what to import. `ResponseError` and the runtime error family are excluded — see sdk-map.md.
+**Type sources**: every type an operation names, with the file that declares it and the schema value exported beside it. Import every name from `coin-gecko`; the `Source` path is where to **read** the shape, never what to import. `ApiError`, the runtime error family and the file vocabulary are excluded — see sdk-map.md.
 
 ### dexesList
 
-- **Signature**: `dexesList(request: Onchain.DexesListRequest, options?: RequestOptions): ApiPromise<DexesList, ResponseError>`
+- **Signature**: `dexesList(request: Onchain.DexesListRequest, options?: RequestOptions): ApiPromise<DexesList, ApiError>`
 - **Wire**: `GET /onchain/networks/{network}/dexes`
 - **Auth**: any of `headerAuth`, `queryAuth` — the first one configured is sent
 - **Request body**: none — no `Content-Type` header is sent
 - **Returns**: `DexesList`
-- **Error**: `ResponseError` — untyped, `payload.kind` always `"undeclared"`
+- **Error**: `CoinGeckoError` with `kind: "api"` — untyped, `payload.kind` always `"undeclared"`
 
 **Fields** — `Onchain.DexesListRequest` (2):
 
@@ -28,12 +28,12 @@ Accessor: `client.onchain` · Source: `src/resources/onchain.ts` · 20 operation
 
 ### latestPoolsList
 
-- **Signature**: `latestPoolsList(request: Onchain.LatestPoolsListRequest, options?: RequestOptions): ApiPromise<Pool, ResponseError>`
+- **Signature**: `latestPoolsList(request: Onchain.LatestPoolsListRequest, options?: RequestOptions): ApiPromise<Pool, ApiError>`
 - **Wire**: `GET /onchain/networks/new_pools`
 - **Auth**: any of `headerAuth`, `queryAuth` — the first one configured is sent
 - **Request body**: none — no `Content-Type` header is sent
 - **Returns**: `Pool`
-- **Error**: `ResponseError` — untyped, `payload.kind` always `"undeclared"`
+- **Error**: `CoinGeckoError` with `kind: "api"` — untyped, `payload.kind` always `"undeclared"`
 
 **Fields** — `Onchain.LatestPoolsListRequest` (3):
 
@@ -49,12 +49,12 @@ Accessor: `client.onchain` · Source: `src/resources/onchain.ts` · 20 operation
 
 ### latestPoolsNetwork
 
-- **Signature**: `latestPoolsNetwork(request: Onchain.LatestPoolsNetworkRequest, options?: RequestOptions): ApiPromise<Pool, ResponseError>`
+- **Signature**: `latestPoolsNetwork(request: Onchain.LatestPoolsNetworkRequest, options?: RequestOptions): ApiPromise<Pool, ApiError>`
 - **Wire**: `GET /onchain/networks/{network}/new_pools`
 - **Auth**: any of `headerAuth`, `queryAuth` — the first one configured is sent
 - **Request body**: none — no `Content-Type` header is sent
 - **Returns**: `Pool`
-- **Error**: `ResponseError` — untyped, `payload.kind` always `"undeclared"`
+- **Error**: `CoinGeckoError` with `kind: "api"` — untyped, `payload.kind` always `"undeclared"`
 
 **Fields** — `Onchain.LatestPoolsNetworkRequest` (4):
 
@@ -71,12 +71,12 @@ Accessor: `client.onchain` · Source: `src/resources/onchain.ts` · 20 operation
 
 ### networksList
 
-- **Signature**: `networksList(request: Onchain.NetworksListRequest, options?: RequestOptions): ApiPromise<NetworksList, ResponseError>`
+- **Signature**: `networksList(request: Onchain.NetworksListRequest, options?: RequestOptions): ApiPromise<NetworksList, ApiError>`
 - **Wire**: `GET /onchain/networks`
 - **Auth**: any of `headerAuth`, `queryAuth` — the first one configured is sent
 - **Request body**: none — no `Content-Type` header is sent
 - **Returns**: `NetworksList`
-- **Error**: `ResponseError` — untyped, `payload.kind` always `"undeclared"`
+- **Error**: `CoinGeckoError` with `kind: "api"` — untyped, `payload.kind` always `"undeclared"`
 
 **Fields** — `Onchain.NetworksListRequest` (1):
 
@@ -90,12 +90,12 @@ Accessor: `client.onchain` · Source: `src/resources/onchain.ts` · 20 operation
 
 ### onchainSimplePrice
 
-- **Signature**: `onchainSimplePrice(request: Onchain.OnchainSimplePriceRequest, options?: RequestOptions): ApiPromise<OnchainSimplePrice, ResponseError>`
+- **Signature**: `onchainSimplePrice(request: Onchain.OnchainSimplePriceRequest, options?: RequestOptions): ApiPromise<OnchainSimplePrice, ApiError>`
 - **Wire**: `GET /onchain/simple/networks/{network}/token_price/{addresses}`
 - **Auth**: any of `headerAuth`, `queryAuth` — the first one configured is sent
 - **Request body**: none — no `Content-Type` header is sent
 - **Returns**: `OnchainSimplePrice`
-- **Error**: `ResponseError` — untyped, `payload.kind` always `"undeclared"`
+- **Error**: `CoinGeckoError` with `kind: "api"` — untyped, `payload.kind` always `"undeclared"`
 
 **Fields** — `Onchain.OnchainSimplePriceRequest` (8):
 
@@ -116,12 +116,12 @@ Accessor: `client.onchain` · Source: `src/resources/onchain.ts` · 20 operation
 
 ### poolAddress
 
-- **Signature**: `poolAddress(request: Onchain.PoolAddressRequest, options?: RequestOptions): ApiPromise<PoolAddressData, ResponseError>`
+- **Signature**: `poolAddress(request: Onchain.PoolAddressRequest, options?: RequestOptions): ApiPromise<PoolAddressData, ApiError>`
 - **Wire**: `GET /onchain/networks/{network}/pools/{address}`
 - **Auth**: any of `headerAuth`, `queryAuth` — the first one configured is sent
 - **Request body**: none — no `Content-Type` header is sent
 - **Returns**: `PoolAddressData`
-- **Error**: `ResponseError` — untyped, `payload.kind` always `"undeclared"`
+- **Error**: `CoinGeckoError` with `kind: "api"` — untyped, `payload.kind` always `"undeclared"`
 
 **Fields** — `Onchain.PoolAddressRequest` (5):
 
@@ -139,12 +139,12 @@ Accessor: `client.onchain` · Source: `src/resources/onchain.ts` · 20 operation
 
 ### poolOhlcvContractAddress
 
-- **Signature**: `poolOhlcvContractAddress(request: Onchain.PoolOhlcvContractAddressRequest, options?: RequestOptions): ApiPromise<Ohlcv, ResponseError>`
+- **Signature**: `poolOhlcvContractAddress(request: Onchain.PoolOhlcvContractAddressRequest, options?: RequestOptions): ApiPromise<Ohlcv, ApiError>`
 - **Wire**: `GET /onchain/networks/{network}/pools/{pool_address}/ohlcv/{timeframe}`
 - **Auth**: any of `headerAuth`, `queryAuth` — the first one configured is sent
 - **Request body**: none — no `Content-Type` header is sent
 - **Returns**: `Ohlcv`
-- **Error**: `ResponseError` — untyped, `payload.kind` always `"undeclared"`
+- **Error**: `CoinGeckoError` with `kind: "api"` — untyped, `payload.kind` always `"undeclared"`
 
 **Fields** — `Onchain.PoolOhlcvContractAddressRequest` (9):
 
@@ -168,12 +168,12 @@ Accessor: `client.onchain` · Source: `src/resources/onchain.ts` · 20 operation
 
 ### poolTokenInfoContractAddress
 
-- **Signature**: `poolTokenInfoContractAddress(request: Onchain.PoolTokenInfoContractAddressRequest, options?: RequestOptions): ApiPromise<PoolTokensInfo, ResponseError>`
+- **Signature**: `poolTokenInfoContractAddress(request: Onchain.PoolTokenInfoContractAddressRequest, options?: RequestOptions): ApiPromise<PoolTokensInfo, ApiError>`
 - **Wire**: `GET /onchain/networks/{network}/pools/{pool_address}/info`
 - **Auth**: any of `headerAuth`, `queryAuth` — the first one configured is sent
 - **Request body**: none — no `Content-Type` header is sent
 - **Returns**: `PoolTokensInfo`
-- **Error**: `ResponseError` — untyped, `payload.kind` always `"undeclared"`
+- **Error**: `CoinGeckoError` with `kind: "api"` — untyped, `payload.kind` always `"undeclared"`
 
 **Fields** — `Onchain.PoolTokenInfoContractAddressRequest` (3):
 
@@ -190,12 +190,12 @@ Accessor: `client.onchain` · Source: `src/resources/onchain.ts` · 20 operation
 
 ### poolTradesContractAddress
 
-- **Signature**: `poolTradesContractAddress(request: Onchain.PoolTradesContractAddressRequest, options?: RequestOptions): ApiPromise<Trades, ResponseError>`
+- **Signature**: `poolTradesContractAddress(request: Onchain.PoolTradesContractAddressRequest, options?: RequestOptions): ApiPromise<Trades, ApiError>`
 - **Wire**: `GET /onchain/networks/{network}/pools/{pool_address}/trades`
 - **Auth**: any of `headerAuth`, `queryAuth` — the first one configured is sent
 - **Request body**: none — no `Content-Type` header is sent
 - **Returns**: `Trades`
-- **Error**: `ResponseError` — untyped, `payload.kind` always `"undeclared"`
+- **Error**: `CoinGeckoError` with `kind: "api"` — untyped, `payload.kind` always `"undeclared"`
 
 **Fields** — `Onchain.PoolTradesContractAddressRequest` (4):
 
@@ -212,12 +212,12 @@ Accessor: `client.onchain` · Source: `src/resources/onchain.ts` · 20 operation
 
 ### poolsAddresses
 
-- **Signature**: `poolsAddresses(request: Onchain.PoolsAddressesRequest, options?: RequestOptions): ApiPromise<MultiPoolAddressData, ResponseError>`
+- **Signature**: `poolsAddresses(request: Onchain.PoolsAddressesRequest, options?: RequestOptions): ApiPromise<MultiPoolAddressData, ApiError>`
 - **Wire**: `GET /onchain/networks/{network}/pools/multi/{addresses}`
 - **Auth**: any of `headerAuth`, `queryAuth` — the first one configured is sent
 - **Request body**: none — no `Content-Type` header is sent
 - **Returns**: `MultiPoolAddressData`
-- **Error**: `ResponseError` — untyped, `payload.kind` always `"undeclared"`
+- **Error**: `CoinGeckoError` with `kind: "api"` — untyped, `payload.kind` always `"undeclared"`
 
 **Fields** — `Onchain.PoolsAddressesRequest` (5):
 
@@ -235,12 +235,12 @@ Accessor: `client.onchain` · Source: `src/resources/onchain.ts` · 20 operation
 
 ### searchPools
 
-- **Signature**: `searchPools(request: Onchain.SearchPoolsRequest, options?: RequestOptions): ApiPromise<PoolSearch, ResponseError>`
+- **Signature**: `searchPools(request: Onchain.SearchPoolsRequest, options?: RequestOptions): ApiPromise<PoolSearch, ApiError>`
 - **Wire**: `GET /onchain/search/pools`
 - **Auth**: any of `headerAuth`, `queryAuth` — the first one configured is sent
 - **Request body**: none — no `Content-Type` header is sent
 - **Returns**: `PoolSearch`
-- **Error**: `ResponseError` — untyped, `payload.kind` always `"undeclared"`
+- **Error**: `CoinGeckoError` with `kind: "api"` — untyped, `payload.kind` always `"undeclared"`
 
 **Fields** — `Onchain.SearchPoolsRequest` (4):
 
@@ -257,12 +257,12 @@ Accessor: `client.onchain` · Source: `src/resources/onchain.ts` · 20 operation
 
 ### tokenDataContractAddress
 
-- **Signature**: `tokenDataContractAddress(request: Onchain.TokenDataContractAddressRequest, options?: RequestOptions): ApiPromise<TokenData, ResponseError>`
+- **Signature**: `tokenDataContractAddress(request: Onchain.TokenDataContractAddressRequest, options?: RequestOptions): ApiPromise<TokenData, ApiError>`
 - **Wire**: `GET /onchain/networks/{network}/tokens/{address}`
 - **Auth**: any of `headerAuth`, `queryAuth` — the first one configured is sent
 - **Request body**: none — no `Content-Type` header is sent
 - **Returns**: `TokenData`
-- **Error**: `ResponseError` — untyped, `payload.kind` always `"undeclared"`
+- **Error**: `CoinGeckoError` with `kind: "api"` — untyped, `payload.kind` always `"undeclared"`
 
 **Fields** — `Onchain.TokenDataContractAddressRequest` (5):
 
@@ -281,12 +281,12 @@ Accessor: `client.onchain` · Source: `src/resources/onchain.ts` · 20 operation
 
 ### tokenInfoContractAddress
 
-- **Signature**: `tokenInfoContractAddress(request: Onchain.TokenInfoContractAddressRequest, options?: RequestOptions): ApiPromise<TokenInfo, ResponseError>`
+- **Signature**: `tokenInfoContractAddress(request: Onchain.TokenInfoContractAddressRequest, options?: RequestOptions): ApiPromise<TokenInfo, ApiError>`
 - **Wire**: `GET /onchain/networks/{network}/tokens/{address}/info`
 - **Auth**: any of `headerAuth`, `queryAuth` — the first one configured is sent
 - **Request body**: none — no `Content-Type` header is sent
 - **Returns**: `TokenInfo`
-- **Error**: `ResponseError` — untyped, `payload.kind` always `"undeclared"`
+- **Error**: `CoinGeckoError` with `kind: "api"` — untyped, `payload.kind` always `"undeclared"`
 
 **Fields** — `Onchain.TokenInfoContractAddressRequest` (2):
 
@@ -301,12 +301,12 @@ Accessor: `client.onchain` · Source: `src/resources/onchain.ts` · 20 operation
 
 ### tokensDataContractAddresses
 
-- **Signature**: `tokensDataContractAddresses(request: Onchain.TokensDataContractAddressesRequest, options?: RequestOptions): ApiPromise<MultiTokenData, ResponseError>`
+- **Signature**: `tokensDataContractAddresses(request: Onchain.TokensDataContractAddressesRequest, options?: RequestOptions): ApiPromise<MultiTokenData, ApiError>`
 - **Wire**: `GET /onchain/networks/{network}/tokens/multi/{addresses}`
 - **Auth**: any of `headerAuth`, `queryAuth` — the first one configured is sent
 - **Request body**: none — no `Content-Type` header is sent
 - **Returns**: `MultiTokenData`
-- **Error**: `ResponseError` — untyped, `payload.kind` always `"undeclared"`
+- **Error**: `CoinGeckoError` with `kind: "api"` — untyped, `payload.kind` always `"undeclared"`
 
 **Fields** — `Onchain.TokensDataContractAddressesRequest` (5):
 
@@ -325,12 +325,12 @@ Accessor: `client.onchain` · Source: `src/resources/onchain.ts` · 20 operation
 
 ### tokensInfoRecentUpdated
 
-- **Signature**: `tokensInfoRecentUpdated(request: Onchain.TokensInfoRecentUpdatedRequest, options?: RequestOptions): ApiPromise<TokenInfoRecentlyUpdated, ResponseError>`
+- **Signature**: `tokensInfoRecentUpdated(request: Onchain.TokensInfoRecentUpdatedRequest, options?: RequestOptions): ApiPromise<TokenInfoRecentlyUpdated, ApiError>`
 - **Wire**: `GET /onchain/tokens/info_recently_updated`
 - **Auth**: any of `headerAuth`, `queryAuth` — the first one configured is sent
 - **Request body**: none — no `Content-Type` header is sent
 - **Returns**: `TokenInfoRecentlyUpdated`
-- **Error**: `ResponseError` — untyped, `payload.kind` always `"undeclared"`
+- **Error**: `CoinGeckoError` with `kind: "api"` — untyped, `payload.kind` always `"undeclared"`
 
 **Fields** — `Onchain.TokensInfoRecentUpdatedRequest` (2):
 
@@ -346,12 +346,12 @@ Accessor: `client.onchain` · Source: `src/resources/onchain.ts` · 20 operation
 
 ### topPoolsContractAddress
 
-- **Signature**: `topPoolsContractAddress(request: Onchain.TopPoolsContractAddressRequest, options?: RequestOptions): ApiPromise<Pool, ResponseError>`
+- **Signature**: `topPoolsContractAddress(request: Onchain.TopPoolsContractAddressRequest, options?: RequestOptions): ApiPromise<Pool, ApiError>`
 - **Wire**: `GET /onchain/networks/{network}/tokens/{token_address}/pools`
 - **Auth**: any of `headerAuth`, `queryAuth` — the first one configured is sent
 - **Request body**: none — no `Content-Type` header is sent
 - **Returns**: `Pool`
-- **Error**: `ResponseError` — untyped, `payload.kind` always `"undeclared"`
+- **Error**: `CoinGeckoError` with `kind: "api"` — untyped, `payload.kind` always `"undeclared"`
 
 **Fields** — `Onchain.TopPoolsContractAddressRequest` (7):
 
@@ -372,12 +372,12 @@ Accessor: `client.onchain` · Source: `src/resources/onchain.ts` · 20 operation
 
 ### topPoolsDex
 
-- **Signature**: `topPoolsDex(request: Onchain.TopPoolsDexRequest, options?: RequestOptions): ApiPromise<Pool, ResponseError>`
+- **Signature**: `topPoolsDex(request: Onchain.TopPoolsDexRequest, options?: RequestOptions): ApiPromise<Pool, ApiError>`
 - **Wire**: `GET /onchain/networks/{network}/dexes/{dex}/pools`
 - **Auth**: any of `headerAuth`, `queryAuth` — the first one configured is sent
 - **Request body**: none — no `Content-Type` header is sent
 - **Returns**: `Pool`
-- **Error**: `ResponseError` — untyped, `payload.kind` always `"undeclared"`
+- **Error**: `CoinGeckoError` with `kind: "api"` — untyped, `payload.kind` always `"undeclared"`
 
 **Fields** — `Onchain.TopPoolsDexRequest` (6):
 
@@ -397,12 +397,12 @@ Accessor: `client.onchain` · Source: `src/resources/onchain.ts` · 20 operation
 
 ### topPoolsNetwork
 
-- **Signature**: `topPoolsNetwork(request: Onchain.TopPoolsNetworkRequest, options?: RequestOptions): ApiPromise<Pool, ResponseError>`
+- **Signature**: `topPoolsNetwork(request: Onchain.TopPoolsNetworkRequest, options?: RequestOptions): ApiPromise<Pool, ApiError>`
 - **Wire**: `GET /onchain/networks/{network}/pools`
 - **Auth**: any of `headerAuth`, `queryAuth` — the first one configured is sent
 - **Request body**: none — no `Content-Type` header is sent
 - **Returns**: `Pool`
-- **Error**: `ResponseError` — untyped, `payload.kind` always `"undeclared"`
+- **Error**: `CoinGeckoError` with `kind: "api"` — untyped, `payload.kind` always `"undeclared"`
 
 **Fields** — `Onchain.TopPoolsNetworkRequest` (5):
 
@@ -421,12 +421,12 @@ Accessor: `client.onchain` · Source: `src/resources/onchain.ts` · 20 operation
 
 ### trendingPoolsList
 
-- **Signature**: `trendingPoolsList(request: Onchain.TrendingPoolsListRequest, options?: RequestOptions): ApiPromise<Pool, ResponseError>`
+- **Signature**: `trendingPoolsList(request: Onchain.TrendingPoolsListRequest, options?: RequestOptions): ApiPromise<Pool, ApiError>`
 - **Wire**: `GET /onchain/networks/trending_pools`
 - **Auth**: any of `headerAuth`, `queryAuth` — the first one configured is sent
 - **Request body**: none — no `Content-Type` header is sent
 - **Returns**: `Pool`
-- **Error**: `ResponseError` — untyped, `payload.kind` always `"undeclared"`
+- **Error**: `CoinGeckoError` with `kind: "api"` — untyped, `payload.kind` always `"undeclared"`
 
 **Fields** — `Onchain.TrendingPoolsListRequest` (4):
 
@@ -444,12 +444,12 @@ Accessor: `client.onchain` · Source: `src/resources/onchain.ts` · 20 operation
 
 ### trendingPoolsNetwork
 
-- **Signature**: `trendingPoolsNetwork(request: Onchain.TrendingPoolsNetworkRequest, options?: RequestOptions): ApiPromise<Pool, ResponseError>`
+- **Signature**: `trendingPoolsNetwork(request: Onchain.TrendingPoolsNetworkRequest, options?: RequestOptions): ApiPromise<Pool, ApiError>`
 - **Wire**: `GET /onchain/networks/{network}/trending_pools`
 - **Auth**: any of `headerAuth`, `queryAuth` — the first one configured is sent
 - **Request body**: none — no `Content-Type` header is sent
 - **Returns**: `Pool`
-- **Error**: `ResponseError` — untyped, `payload.kind` always `"undeclared"`
+- **Error**: `CoinGeckoError` with `kind: "api"` — untyped, `payload.kind` always `"undeclared"`
 
 **Fields** — `Onchain.TrendingPoolsNetworkRequest` (5):
 

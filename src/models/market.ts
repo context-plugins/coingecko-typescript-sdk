@@ -1,10 +1,15 @@
 import * as s from "../core/validation/index.js";
 import type { Schema } from "../core/validation/schema.js";
 
+/** Exchange information */
 export type Market = {
+  /** Exchange name */
   name?: string;
+  /** Exchange identifier */
   identifier?: string;
+  /** Exchange trading incentive */
   hasTradingIncentive?: boolean;
+  /** Exchange logo URL */
   logo?: string;
 };
 

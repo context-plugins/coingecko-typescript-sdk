@@ -9,8 +9,8 @@ export type H1 = {
 };
 
 export const h1Schema: Schema<H1> = s.object<H1>({
-  buys: s.optional(s.number()),
-  sells: s.optional(s.number()),
-  buyers: s.optional(s.number()),
-  sellers: s.optional(s.number()),
+  buys: s.optional(s.int()),
+  sells: s.optional(s.int()),
+  buyers: s.optional(s.int()),
+  sellers: s.optional(s.int()),
 });

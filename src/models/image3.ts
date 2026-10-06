@@ -1,9 +1,13 @@
 import * as s from "../core/validation/index.js";
 import type { Schema } from "../core/validation/schema.js";
 
+/** Asset platform image URLs */
 export type Image3 = {
+  /** Thumbnail image URL */
   thumb?: string;
+  /** Small image URL */
   small?: string;
+  /** Large image URL */
   large?: string;
 };
 

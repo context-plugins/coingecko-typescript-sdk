@@ -14,7 +14,7 @@ export const attributes1Schema: Schema<Attributes1> = s.object<Attributes1>({
   address: s.optional(s.string()),
   name: s.optional(s.string()),
   symbol: s.optional(s.string()),
-  decimals: s.optional(s.number()),
+  decimals: s.optional(s.int()),
   imageUrl: s.optional(s.string()),
   coingeckoCoinId: s.optional(s.string()),
   _keysMap: {

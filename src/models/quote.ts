@@ -1,6 +1,7 @@
 import * as s from "../core/validation/index.js";
 import type { Schema } from "../core/validation/schema.js";
 
+/** Quote token metadata */
 export type Quote = {
   name?: string;
   symbol?: string;
