@@ -35,7 +35,7 @@ export class CoinGeckoClient {
 
   constructor(options: ClientOptions = {}) {
     this.#rawClient = new RawClient({
-      ...buildCoreClientOptions(options),
+      ...buildCoreClientOptions(options, "COIN_GECKO_CLIENT_LOG"),
       defaultHeaders: [
         { name: "User-Agent", value: "CoinGeckoClient/3.0.0 TypeScript", schema: s.string() },
         { name: "X-APIMatic-Lang", value: "TypeScript", schema: s.string() },
